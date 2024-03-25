@@ -21,14 +21,14 @@
 title: Faris' Esoteric Garden
 email: frs@hbb.dev
 description: >- # this means to ignore newlines until "baseurl:"
-  Minimally researched ideas that I find myself compelled to write about.
+  Idle thoughts for rumination and inspiration.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hbb.dev" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: frshbb
 github_username:  manifoldfrs
 
 # Build settings
-theme: minima
+theme: cayman
 plugins:
   - jekyll-feed
 
