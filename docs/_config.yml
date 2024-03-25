@@ -28,7 +28,7 @@ twitter_username: frshbb
 github_username:  manifoldfrs
 
 # Build settings
-theme: jekyll-theme-midnight
+remote_theme: jekyll-theme-chirpy
 plugins:
   - jekyll-feed
 
