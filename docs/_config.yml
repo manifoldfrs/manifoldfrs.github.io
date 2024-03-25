@@ -30,6 +30,7 @@ github_username:  manifoldfrs
 # Build settings
 theme: minima
 plugins:
+  - jekyll-include-cache
   - jekyll-feed
 
 # Exclude from processing.
