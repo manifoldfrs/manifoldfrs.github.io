@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  "Neo Sparta"
-date:   2024-01-28 15:23:07 -0800
+title: 'Neo Sparta'
+date: 2024-01-28 15:23:07 -0800
 categories: Greek culture
 ---
-## Unveiling the Enigma of Spartan Society: The Warriors of Ancient Greece
+
+## Thoughts on Spartan Society
 
 In history, few civilizations have left as indelible a mark as the Spartans of ancient Greece. Renowned for their warrior culture, discipline, and unwavering commitment to their city-state, Sparta has long captured the imagination of historians, filmmakers, and enthusiasts of the past. Yet, beneath the surface of their martial reputation lies a society that defied the norms of its time in fascinating ways. Lets explore their no-nonsense ethos of discipline and unity and ponder what these ancient champions might look like today if armed with more technology.
 
@@ -73,6 +74,7 @@ In this vision of a modern Spartan society, the lessons of discipline and unity 
 ![Neo Sparta](/assets/images/neo_sparta.png)
 
 ---
+
 #### Citations
 
 Plutarch. [Life of Lycurgus](https://a.co/d/gmuwoWw)
