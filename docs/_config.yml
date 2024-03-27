@@ -38,7 +38,7 @@ remote_theme: jekyll/minima
 
 minima:
 
-  skin: dark
+  skin: classic
 
   social_links:
   #  - { platform: devto,          user_url: "https://dev.to/jekyll" }
