@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Training open source models for PII detection'
+title: 'Training Open Source Models for PII Detection'
 date: 2024-04-14 15:23:07 -0800
 categories: Posts
 ---
