@@ -57,7 +57,7 @@ minima:
   #  - { platform: twitter,        user_url: "https://twitter.com/jekyllrb" }
     - { platform: x,              user_url: "https://x.com/frshbb" }
   #  - { platform: youtube,        user_url: "https://www.youtube.com/jekyll" }
-    - { platform: airchat,        user_url: "https://www.air.chat/faris" }
+    - { platform: stackoverflow,   user_url: "https://www.air.chat/faris" }
 
 # Exclude from processing.
 # The following items will not be processed, by default.
