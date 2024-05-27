@@ -27,7 +27,7 @@ I supplemented these foods with Heart & Soil supplements and Vitamin D since I k
 
 Other vitamins and minerals I could get from meat like liver, heart, ground beef, and fruits (whether it's organic or not doesn't matter). If you're not sure where to get liver and other organs from, you can take Heart & Soil supplements.
 
-I was also working out about 3-4 times a week. My usual routine was 30-60 minutes of cardio combined with weight lifting and kettlebell lifts. I would also do a longer run (60-120 minutes) once per day.
+I was also working out about 3-4 times a week. My usual routine was 30-60 minutes of cardio combined with weight lifting and kettlebell lifts. I would also do a longer run (60-120 minutes) once per week.
 
 ## Don't be a Zealot
 
