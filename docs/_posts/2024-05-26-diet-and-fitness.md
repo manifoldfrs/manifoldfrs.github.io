@@ -99,6 +99,7 @@ As I mentioned before, I follow the Blueprint supplement stack plus some other s
 - [Blueprint NAC + Ginger + Curcumin](https://blueprint.bryanjohnson.com/products/nac-ginger-capsules) - 3
 - [Blueprint Red Yeast Rice + odor free garlic](https://blueprint.bryanjohnson.com/products/red-yeast-rice-garlic-capsules) - 1
 - [ProButyrate](https://www.amazon.com/dp/B075BRR1JJ/?coliid=I1TE1I70BTAH5G&colid=OCRLL2WUBBTJ) 600mg
+- [EPA/DHA/DPA](https://www.amazon.com/dp/B00OZI7BVE/?coliid=IT5B0J75YGD4&colid=OCRLL2WUBBTJ) 1000mg
 
 #### Afternoon
 
