@@ -68,7 +68,7 @@ I haven't always been the most meticulous when it comes to tracking food, calori
 - Black lentils, 45 grams dry, ~150 grams cooked
 - Broccoli, ~85 grams
 - Cumin, 1 Tbsp
-- Salt, 1 Tbsp
+- Salt to taste
 - Garlic, 1 clove
 - After prep, drizzle 1 Tbsp of Extra Virgin Olive Oil
 
@@ -79,7 +79,7 @@ I haven't always been the most meticulous when it comes to tracking food, calori
 
 - 0.5 lbs of Ground beef
 - 150g Cauliflower rice
-- Salt, 1 Tbsp
+- Salt to taste
 - Garlic, 1 clove
 - After prep, drizzle 1 Tbsp of Extra Virgin Olive Oil
 
