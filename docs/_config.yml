@@ -21,7 +21,7 @@
 title: Faris Habib
 email: frs@hbb.dev
 description: >- # this means to ignore newlines until "baseurl:"
-  An esoteric garden.
+  Esoteric thoughts
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hbb.dev" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: frshbb
