@@ -15,15 +15,15 @@ The wind was flapping a temple flag, and two monks were having an argument about
 
 ## On the nature of Religion
 
-Perspective often shifts one's understanding of reality, and by extension, spirituality. Think of the philosophical thought experiment
+Perspective often shifts one's understanding of reality, and by extension, spirituality. Think of the philosophical thought experiment:
 
 `If a tree falls in a forest and no one is around to hear it, does it make a sound?`
 
-In this thought experiement we are challenged to consider the relationship between observation and reality. Both the koan and this thought experiment emphasize that what we perceive as reality is often a construct of our minds. Religion often addresses existential questions and seeks to explain the nature of reality, existence, and the divine. Perspective plays a crucial role in how individuals interpret religious teaching and experiences. Personal religious experiences can vary greatly, shaping one's beliefs and understanding of spiritual truths. Different denominations and faith traditions interpret sacred texts differently, highlighting how perspective influences religious doctrine and practice. Cultural and individual backgrounds can affect how religious stories and teaching are understood and valued.
+We are challenged to consider the relationship between observation and reality. What we perceive as reality is often a construct of our minds, and religion often addresses existential questions and seeks to explain the nature of reality and the divine. Perspective plays a crucial role in how individuals interpret these teachings. Personal religious experiences can vary greatly, shaping one's beliefs and understanding of spiritual truths. Different denominations and faith traditions interpret sacred texts differently, highlighting how your perspective influences religious doctrine and practice. Not even adding in the different cultural and individual backgrounds that can affect how religious stories and teaching are understood and valued.
 
-## Parallells in Christianity
+## Parallels in Christianity
 
-As a Christian myself, there are many stories in the Bible that explores similar themes of perception and understanding, think of [Luke 24:13-35](https://www.biblegateway.com/passage/?search=Luke%2024:13-35&version=NIV) for example:
+As a Christian myself, there are many stories in the Bible that explore similar themes of perception and understanding, think of [Luke 24:13-35](https://www.biblegateway.com/passage/?search=Luke%2024:13-35&version=NIV):
 
 ```
 13 Now that same day two of them were going to a village called Emmaus, about seven miles[a] from Jerusalem. 14 They were talking with each other about everything that had happened. 15 As they talked and discussed these things with each other, Jesus himself came up and walked along with them; 16 but they were kept from recognizing him.
@@ -45,12 +45,8 @@ They stood still, their faces downcast. 18 One of them, named Cleopas, asked him
 33 They got up and returned at once to Jerusalem. There they found the Eleven and those with them, assembled together 34 and saying, “It is true! The Lord has risen and has appeared to Simon.” 35 Then the two told what had happened on the way, and how Jesus was recognized by them when he broke the bread.
 ```
 
-After Jesus' crucifixion, two of his disciples walk to the village of Emmaus, discussing what has happened. Jesus joins them, but they do not recognize him.
+After Jesus' crucifixion, two of his disciples walk to the village of Emmaus, discussing what has happened. Jesus joins them, but they do not recognize him. It's only when Jesus breaks bread with them that their eyese are opened. The disciples' inability to recognize Jesus reflects how grief and expectations can cloud perception.
 
-`"But their eyes were kept from recognizing him."` (Luke 24:16)
 
-It's only when Jesus breaks bread with them that their eyese are opened.
-
-`"Then their eyes were opened, and they recognized him; and he vanished from their sight."` (Luke 24:31)
-
-The disciples' inability to recognize Jesus reflects how grief and expectations can cloud perception. The story emphasizes how understanding often requires a shift in perspective.
+## Closing thoughts
+It's interesting to see how you perceive reality shapes the deepest aspects of your own life. Understanding often requires a shift in how you see things. Anyway, I enjoyed the atmosphere of this book club, not only could you find books on Buddhism and Christianity, but also on Atheism, [AGI and how it could be the second coming of Christ](https://www.amazon.com/AGI-Divine-Unveiling-Mysteries-Intelligence/dp/B0CGWMLRJ9), and even books on Satanic cults. The goal was to explore your curiosity wherever it led and to share that knowledge you gained with the rest of the community. I'm looking forward to similar events on other deep topics.
