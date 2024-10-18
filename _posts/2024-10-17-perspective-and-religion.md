@@ -5,7 +5,7 @@ date: 2024-10-17 20:37:07 -0000
 categories: Posts
 ---
 
-I'm sitting in the AGI House in SF at the moment, having had the priviledge of attending (Holy Books: Religion Reading Night)[https://partiful.com/e/mKighhJFNzw8dOx4GRYK?update=bXE9ubqxr2xtTxuYThPwX]. The goal is to read through a religious textbook that interests you and share your thoughts and ideas with the rest of the group. Tonight I spent the last hour reading through (Gateless Gate)[https://a.co/d/4X0TXFZ], a collection of short but deep stories or koans on Zen Buddhism. One story in particular gripped me:
+I'm sitting in the AGI House in SF at the moment, having had the priviledge of attending [Holy Books: Religion Reading Night](https://partiful.com/e/mKighhJFNzw8dOx4GRYK?update=bXE9ubqxr2xtTxuYThPwX). The goal is to read through a religious textbook that interests you and share your thoughts and ideas with the rest of the group. Tonight I spent the last hour reading through [Gateless Gate](https://a.co/d/4X0TXFZ), a collection of short but deep stories or koans on Zen Buddhism. One story in particular gripped me:
 
 ## Not the Wind, Not the Flag
 
@@ -23,7 +23,7 @@ In this thought experiement we are challenged to consider the relationship betwe
 
 ## Parallells in Christianity
 
-As a Christian myself, there are many stories in the Bible that explores similar themes of perception and understanding, think of (Luke 24:13-35)[https://www.biblegateway.com/passage/?search=Luke%2024:13-35&version=NIV] for example:
+As a Christian myself, there are many stories in the Bible that explores similar themes of perception and understanding, think of [Luke 24:13-35](https://www.biblegateway.com/passage/?search=Luke%2024:13-35&version=NIV) for example:
 
 ```
 13 Now that same day two of them were going to a village called Emmaus, about seven miles[a] from Jerusalem. 14 They were talking with each other about everything that had happened. 15 As they talked and discussed these things with each other, Jesus himself came up and walked along with them; 16 but they were kept from recognizing him.
