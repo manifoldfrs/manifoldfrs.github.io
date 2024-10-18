@@ -54,5 +54,3 @@ It's only when Jesus breaks bread with them that their eyese are opened.
 ` "Then their eyes were opened, and they recognized him; and he vanished from their sight."` (Luke 24:31)
 
 The disciples' inability to recognize Jesus reflects how grief and expectations can cloud perception. The story emphasizes how understanding often requires a shift in perspective.
-
-
