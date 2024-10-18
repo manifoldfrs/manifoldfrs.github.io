@@ -47,10 +47,10 @@ They stood still, their faces downcast. 18 One of them, named Cleopas, asked him
 
 After Jesus' crucifixion, two of his disciples walk to the village of Emmaus, discussing what has happened. Jesus joins them, but they do not recognize him.
 
-` "But their eyes were kept from recognizing him."` (Luke 24:16)
+`"But their eyes were kept from recognizing him."` (Luke 24:16)
 
 It's only when Jesus breaks bread with them that their eyese are opened.
 
-` "Then their eyes were opened, and they recognized him; and he vanished from their sight."` (Luke 24:31)
+`"Then their eyes were opened, and they recognized him; and he vanished from their sight."` (Luke 24:31)
 
 The disciples' inability to recognize Jesus reflects how grief and expectations can cloud perception. The story emphasizes how understanding often requires a shift in perspective.
