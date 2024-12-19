@@ -66,6 +66,7 @@ Here’s my current supplement and meal plan:
 
 - [A keto-friendly protein bar](https://blueprint.bryanjohnson.com/products/macadamia-protein-bar) – 1 bar
 - [Maple Valley Salted Butter](https://a.co/d/6Yd84OI) – 1–2 tbsp with black coffee
+- [Another LMNT packet](https://a.co/d/68wdIaO) – 1 packet if needed
 
 Most of these supplements are similar to what I used earlier this year. I’m currently experimenting with Lion’s Mane for cognitive focus; it might be working or could just be a placebo. I might drop it in a month or two.
 
