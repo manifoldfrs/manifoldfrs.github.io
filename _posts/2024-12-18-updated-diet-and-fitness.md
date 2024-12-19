@@ -81,6 +81,6 @@ I add a supplemental exercise for each core lift, then an ab workout. On the oth
 
 ### Conclusion
 
-After switching to keto and sticking with consistent workouts, I’m at about 168 lbs—down from 187 lbs earlier this summer. I’ve even developed noticeable [cum gutters](https://www.youtube.com/watch?v=K4wQM9o3nOY).
+After switching to keto and sticking with consistent workouts, I’m at about 168 lbs—down from 187 lbs earlier this summer. I’ve even developed noticeable [V-cut abs](https://www.youtube.com/watch?v=K4wQM9o3nOY).
 
 Most importantly, my energy is through the roof. I can plan high-level strategies, code, lift heavy, and still have energy for life’s other responsibilities. The only thing I miss is jiu-jitsu, which I paused to focus on my startup. I hope to return to it in the future, but for now, this routine is working well. I hope this post inspires you to find a diet and fitness plan that fits your demands, too.
