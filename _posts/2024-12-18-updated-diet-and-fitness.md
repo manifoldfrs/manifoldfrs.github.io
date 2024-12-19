@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Diet & Fitness Plan'
+title: 'Diet & Fitness Plan: December 2024'
 date: 2024-12-18 12:33:07 -0800
 categories: Talks
 ---
@@ -37,35 +37,35 @@ Here’s my current supplement and meal plan:
 
 ### Morning
 
-- [Collagen Peptides](https://www.amazon.com/dp/B07C7S9Q4F/?coliid=I2CPX9ER3CT4OZ&colid=OCRLL2WUBBTJ) – 1 scoop
-- [Creatine Monohydrate](https://www.amazon.com/dp/B00GL2HMES/?coliid=IUOORW0HFKQVT&colid=OCRLL2WUBBTJ) – 1 scoop
-- [Inulin](https://www.amazon.com/dp/B07X4LMF6L/?coliid=I3K0SNSWLQ4JY1&colid=OCRLL2WUBBTJ) – 1 tsp
-- [Garlic](https://www.amazon.com/dp/B00012NGIA/?coliid=I37IAT6O76QJTB&colid=OCRLL2WUBBTJ) 1.2g
 - [Blueprint Essentials](https://blueprint.bryanjohnson.com/products/essentials-capsules) – 2
 - [Blueprint Soft Gel](https://blueprint.bryanjohnson.com/products/essential-softgels) – 1
 - [Blueprint NAC + Ginger + Curcumin](https://blueprint.bryanjohnson.com/products/nac-ginger-capsules) – 3
 - [Blueprint Red Yeast Rice + odor free garlic](https://blueprint.bryanjohnson.com/products/red-yeast-rice-garlic-capsules) – 1
-- [EPA/DHA/DPA](https://www.amazon.com/dp/B00OZI7BVE/?coliid=IT5B0J75YGD4&colid=OCRLL2WUBBTJ) – 1000mg
-- [Lion’s Mane](https://www.amazon.com/dp/B078SZX3ML/?coliid=I3M791D7K4AMT2&colid=OCRLL2WUBBTJ) – 2
-- [LMNT Zero Hot Chocolate Mix](https://www.amazon.com/dp/B08KSMD5L8/?coliid=IDUQ492XW8L8T&colid=OEHD8907ZN9T) – 1 packet
-- [Bulletproof MCT Oil](https://www.amazon.com/dp/B076N6XLQ4/?coliid=I1YJQB2WNJYRR1&colid=OEHD8907ZN9T) – 1 packet
 - [Blueprint Longevity Mix](https://blueprint.bryanjohnson.com/products/longevity-protein) – 1 scoop
 - [Blueprint Nutty Butter](https://blueprint.bryanjohnson.com/products/nutty-butter) – 2 tbsp
+- [Collagen Peptides](https://a.co/d/6ma1lwj) – 1 scoop
+- [Creatine Monohydrate](https://a.co/d/f2Ptdrd) – 1 scoop
+- [Inulin](https://a.co/d/3DsAGLo) – 1 tsp
+- [Garlic](https://a.co/d/cfxh658) – 1.2g
+- [EPA/DHA/DPA](https://a.co/d/4hwvcoU) – 1000mg
+- [LMNT Zero Hot Chocolate Mix](https://a.co/d/4UWeVij) – 1 packet
+- [Bulletproof MCT Oil](https://a.co/d/8xlIz03) – 1 packet
+- [Lion’s Mane](https://a.co/d/56gdkb4) – 2
 
 ### Afternoon
 
 - [Heart & Soil Whole Package](https://shop.heartandsoil.co/products/whole-package) – 6
 - [Hearty & Soil Bone Matrix](https://shop.heartandsoil.co/products/bone-matrix) – 3
 - [Hearty & Soil Firestarter](https://shop.heartandsoil.co/products/fire-starter) – 6
-- [EPA/DHA/DPA](https://www.amazon.com/dp/B00OZI7BVE/?coliid=IT5B0J75YGD4&colid=OCRLL2WUBBTJ) – 1000mg
-- [Garlic](https://www.amazon.com/dp/B00012NGIA/?coliid=I37IAT6O76QJTB&colid=OCRLL2WUBBTJ) – 1.2g
+- [EPA/DHA/DPA](https://a.co/d/4hwvcoU) – 1000mg
+- [Garlic](https://a.co/d/cfxh658) – 1.2g
 - [Kirkland 100% Grass Fed Beef Patties](https://www.costcobusinessdelivery.com/kirkland-signature-grass-fed-beef-patties%2C-13-lb-patty%2C-15-ct.product.100358331.html) – 2 patties
-- [Maple Valley Salted Butter](https://www.costcobusinessdelivery.com/kirkland-signature-grass-fed-beef-patties%2c-13-lb-patty%2c-15-ct.product.100358331.html) – 4 tbsp
+- [Maple Valley Salted Butter](https://a.co/d/6Yd84OI) – 4 tbsp
 
 ### Snacks
 
 - [A keto-friendly protein bar](https://blueprint.bryanjohnson.com/products/macadamia-protein-bar) – 1 bar
-- [Maple Valley Salted Butter](https://www.costcobusinessdelivery.com/kirkland-signature-grass-fed-beef-patties%2c-13-lb-patty%2c-15-ct.product.100358331.html) – 1–2 tbsp with black coffee
+- [Maple Valley Salted Butter](https://a.co/d/6Yd84OI) – 1–2 tbsp with black coffee
 
 Most of these supplements are similar to what I used earlier this year. I’m currently experimenting with Lion’s Mane for cognitive focus; it might be working or could just be a placebo. I might drop it in a month or two.
 
@@ -81,6 +81,6 @@ I add a supplemental exercise for each core lift, then an ab workout. On the oth
 
 ### Conclusion
 
-After switching to keto and sticking with a system that works for me, I’m at about 168 lbs—down from 187 lbs earlier this summer. I’ve even developed noticeable [V-cut abs](https://www.youtube.com/watch?v=K4wQM9o3nOY).
+After switching to keto and sticking with a system that works for me, I’m at about 168 lbs—down from 187 lbs earlier this summer. I’ve even developed noticeable [obliques](https://www.youtube.com/watch?v=K4wQM9o3nOY).
 
 Most importantly, my energy is through the roof. I can plan high-level strategies, code, lift heavy, and still have energy for life’s other responsibilities. The only thing I miss is jiu-jitsu, which I paused to focus on my startup. I hope to return to it in the future, but for now, this routine is working well. I hope this post inspires you to find a diet and fitness plan that fits your demands, too.
