@@ -5,7 +5,7 @@ date: 2024-12-18 12:33:07 -0800
 categories: Talks
 ---
 
-Here’s an update from my previous post in May: [Diet & Fitness Plan](../2024-05-26-diet-and-fitness-plan).
+Here’s an update from my previous post in May.
 
 ## Exploring and Settling on Keto
 
