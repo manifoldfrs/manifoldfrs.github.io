@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Having Faith'
-date: 2024-01-11 20:15:07 -0000
+date: 2025-01-11 20:15:07 -0000
 categories: Posts
 ---
 
@@ -71,7 +71,7 @@ Faith doesn’t promise an obstacle-free journey—and planning doesn’t guaran
 
 *But Faris, what about when genuinely traumatizing things do happen? You seriously going to tell me that I should just surrender, let go, and have faith when a homeless person tried to assault me and steal my money last week?*
 
-I struggled with my own understanding of faith for a very long time, and personally, [I'll always wrestle with God](https://www.biblegateway.com/passage/?search=Genesis%2032:22-32&version=NIV), but one of the hardest lessons to learn when letting go was understanding that *bad things do happen to good people*. This is what spurred my desire to control everything in the first place. Why? I don't think I can give an answer that will satisfy everyone, but in trying to understand the tramautizing lessons from my own life and the lives of my family and friends, I think the best answer I can give is that they happen so the survivors can speak to the experience and establish what is **truly wrong** and **should never be tolerated**. What other alternatives are there? To repeat the same cycle of abuse to others? To ignore your pain for the rest of your life and drown it with hedonism? You're welcome to suggest a better reason, but this is the best one I've found.
+I struggled with my own understanding of faith for a very long time, and personally, [I'll always wrestle with God](https://www.biblegateway.com/passage/?search=Genesis%2032:22-32&version=NIV), but one of the hardest lessons to learn when letting go was understanding that *bad things do happen to good people*. This is what spurred my desire to control everything in the first place. Why? I don't think I can give an answer that will satisfy everyone, but in trying to understand the tramautizing lessons from my own life and the lives of my family and friends, I think the best answer I can give is that they happen so the survivors can speak to the experience and establish what is **truly wrong** and **should never be tolerated**. What are the alternatives? To repeat the same cycle of abuse to others? To ignore your pain for the rest of your life and drown it with hedonism? You're welcome to suggest a better reason, but this is the best one I've found.
 
 # Conclusion
 
