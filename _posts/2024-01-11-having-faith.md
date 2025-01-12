@@ -53,7 +53,7 @@ Faith often conjures images of spiritual conviction or religious practice, but e
 
 Faith also breeds resilience. People who lean on faith (whether in God, life’s inherent meaning, or a guiding principle) tend to bounce back faster from disappointments. When you trust there’s a purpose beyond the present challenge, failure no longer feels final. Abraham’s story is a hallmark of faith in the Old Testament. He leaves his homeland based on God’s promise, long before seeing any tangible evidence of blessing.
 
-Faith often requires obedience before clarity—we step out even though we can't see every detail. That doesn't mean we're taking a blind leap of course, but more like having confident trust in God's (or the universe, or whatever else you believe in) character and promise, even when current evidence is incomplete. As a simple example, think about if you've ever loaned a friend or family member some money: assuming you're able to sustain yourself and have the ability to help a loved one out, you're probably not thinking twice about when they pay you back, because you trust them.
+Faith often requires obedience before clarity—we step out even though we can't see every detail. That doesn't mean we're taking a blind leap of course, but more like having confident trust in God's (or the universe, or whatever else you believe in) character and promise, even when current evidence is incomplete. As a simple analogy, think about if you've ever loaned a friend or family member some money: assuming you're able to sustain yourself and have the ability to help a loved one out, you're probably not thinking twice about when they pay you back, because you trust them.
 
 # Planning and Preparedness: Balancing the Equation
 
