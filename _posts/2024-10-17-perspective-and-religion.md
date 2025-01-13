@@ -9,9 +9,7 @@ I'm sitting in the AGI House in SF at the moment, having had the priviledge of a
 
 ## Not the Wind, Not the Flag
 
-```
-The wind was flapping a temple flag, and two monks were having an argument about it. One said, "The flag is moving." The other said, "The wind is moving." They argued back and forth but could not reach the truth. The sixth patriarch said, "It is not the wind that moves. It is not the flag that moves. It is your mind that moves." The two monks were struck with awe.
-```
+> The wind was flapping a temple flag, and two monks were having an argument about it. One said, "The flag is moving." The other said, "The wind is moving." They argued back and forth but could not reach the truth. The sixth patriarch said, "It is not the wind that moves. It is not the flag that moves. It is your mind that moves." The two monks were struck with awe.
 
 ## On the nature of Religion
 
