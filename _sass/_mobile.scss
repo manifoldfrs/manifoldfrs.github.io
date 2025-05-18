@@ -1,0 +1,186 @@
+/**
+ * @description
+ * This file contains SCSS styles specifically for mobile navigation, including
+ * the hamburger toggle button and the slide-out/drop-down menu panel.
+ * These styles are designed to be responsive and activate on smaller screen sizes.
+ *
+ * Key features:
+ * - Styles for the navigation toggle button (hamburger icon).
+ * - Animation for the hamburger icon transforming into a close icon (X).
+ * - Styles for the mobile navigation menu panel (e.g., position, visibility, transitions).
+ * - Styles for navigation links within the mobile menu.
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: For Nord theme colors, typography, spacing units, and transition settings.
+ * - JavaScript (`assets/js/navigation.js`): For toggling the 'is-active' class.
+ *
+ * @notes
+ * - These styles typically target elements within the `_includes/header.html` that are
+ *   conditionally shown or modified for mobile viewports.
+ * - The breakpoint for mobile navigation is defined by `$mobile-nav-breakpoint`.
+ */
+
+// -----------------------------------------------------------------------------
+// Variables & Settings
+// -----------------------------------------------------------------------------
+$mobile-nav-breakpoint: 768px; // Matches the breakpoint in _header.scss and _navigation.scss
+$nav-toggle-size: 30px;
+$nav-toggle-bar-height: 3px;
+$nav-toggle-bar-spacing: 6px;
+$nav-toggle-animation-speed: $transition-base;
+
+// -----------------------------------------------------------------------------
+// Navigation Toggle Button (Hamburger Icon)
+// -----------------------------------------------------------------------------
+.nav-toggle {
+  display: none; // Hidden by default, shown on mobile via media query
+  width: $nav-toggle-size;
+  height: $nav-toggle-size;
+  position: relative; // For absolute positioning of bars
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 1001; // Ensure it's above other header content
+
+  .nav-toggle-bar {
+    display: block;
+    width: 100%;
+    height: $nav-toggle-bar-height;
+    background-color: $nord6; // Text Color (Snow Storm) for bars
+    border-radius: $nav-toggle-bar-height / 2;
+    position: absolute;
+    left: 0;
+    transition: transform $nav-toggle-animation-speed ease-in-out, opacity $nav-toggle-animation-speed ease-in-out, background-color $nav-toggle-animation-speed ease-in-out;
+
+    // Top bar
+    &:nth-child(1) {
+      top: calc(50% - #{$nav-toggle-bar-spacing} - #{$nav-toggle-bar-height}/ 2);
+    }
+
+    // Middle bar
+    &:nth-child(2) {
+      top: calc(50% - #{$nav-toggle-bar-height}/ 2);
+    }
+
+    // Bottom bar
+    &:nth-child(3) {
+      top: calc(50% + #{$nav-toggle-bar-spacing} - #{$nav-toggle-bar-height}/ 2);
+    }
+  }
+
+  // Active state (transformed to "X")
+  &.is-active {
+    .nav-toggle-bar {
+      background-color: $nord8; // Primary Accent when active
+
+      &:nth-child(1) {
+        transform: translateY(calc(#{$nav-toggle-bar-spacing} + #{$nav-toggle-bar-height}/ 2)) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0; // Hide middle bar
+      }
+
+      &:nth-child(3) {
+        transform: translateY(calc(-#{$nav-toggle-bar-spacing} - #{$nav-toggle-bar-height}/ 2)) rotate(-45deg);
+      }
+    }
+  }
+
+  // Show toggle only on mobile screens
+  @media (max-width: $mobile-nav-breakpoint) {
+    display: block;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Mobile Navigation Menu Panel Wrapper
+// -----------------------------------------------------------------------------
+#site-nav-mobile-wrapper {
+  display: none; // Hidden by default on all screens
+  position: fixed; // Or absolute, depending on desired effect
+  top: 0; // Start from the top of the viewport
+  left: 0;
+  width: 100%;
+  height: 100vh; // Full viewport height
+  background-color: rgba($nord0, 0.98); // Semi-transparent background
+  z-index: 1000; // Below toggle button, above page content
+  overflow-y: auto; // Allow scrolling if content exceeds viewport height
+  padding-top: $spacing-xxl; // Space for header/toggle or just top padding
+  padding-bottom: $spacing-lg;
+  transition: opacity $transition-base ease-in-out, visibility $transition-base ease-in-out;
+  opacity: 0;
+  visibility: hidden; // Initially hidden
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  // This wrapper is shown by JS. The .site-nav inside it will be styled for mobile.
+  @media (max-width: $mobile-nav-breakpoint) {
+    display: block; // Allow JS to toggle visibility via 'is-active'
+  }
+  // Hide the mobile wrapper entirely on desktop by default.
+  // JS will handle display via is-active, but this ensures no flash of content.
+  @media (min-width: ($mobile-nav-breakpoint + 1px)) {
+    display: none !important; // Important to override JS display:block if screen resizes
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+
+  // The actual .site-nav needs to be adapted for the mobile menu panel
+  .site-nav {
+    display: flex;
+    flex-direction: column; // Stack nav items vertically
+    align-items: center; // Center items horizontally
+    justify-content: center; // Center items vertically in the available space
+    width: 100%;
+    height: 100%; // Take full height of wrapper if possible
+    padding: $spacing-lg $content-padding-mobile; // Inner padding for the nav items
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: $spacing-sm; // Gap between nav items
+    }
+
+    li {
+      width: 100%;
+      text-align: center;
+    }
+
+    a {
+      display: block; // Make links full width for easier tapping
+      padding: $spacing-md $spacing-sm; // Generous padding for tap targets
+      font-size: 1.5rem; // Larger font size for mobile menu
+      color: $nord6; // Text Color: Nord Snow Storm
+      text-transform: uppercase; // Optional: uppercase text for emphasis
+      font-weight: $font-weight-medium;
+      border-bottom: 1px solid transparent; // For consistency or potential active state
+      width: 100%;
+      max-width: 300px; // Max width for nav items for aesthetics
+      margin: 0 auto; // Center the max-width items
+
+      &:hover,
+      &:focus {
+        color: $nord8; // Primary Accent: Nord Frost Blue
+        background-color: rgba($nord8, 0.1); // Subtle background on hover
+        border-bottom-color: transparent; // Remove from main nav style if not wanted
+      }
+
+      &.active {
+        color: $nord8;
+        font-weight: $font-weight-bold;
+        border-bottom: 2px solid $nord8; // Underline for active link
+      }
+    }
+  }
+}
+
+// Optional: Class to prevent body scroll when mobile menu is open
+// body.no-scroll {
+//   overflow: hidden;
+// }

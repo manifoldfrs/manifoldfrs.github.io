@@ -1,13 +1,13 @@
 /**
  * @description
  * This file defines the SCSS styles for the site header component.
- * It includes styling for the site title/logo (now with an avatar) and the container
- * for the main navigation. The header is designed to be responsive.
+ * It includes styling for the site title and the container for the main navigation.
+ * The header is designed to be responsive. The avatar has been removed.
  *
  * Key features:
  * - Styles the main header container (`.site-header`) as a full-width bar.
  * - Styles an inner wrapper (`.site-header-content`) with a max-width for content alignment.
- * - Positions site title (with avatar) to the left and navigation area to the right.
+ * - Positions site title to the left and navigation area to the right.
  * - Implements responsive behavior for mobile devices (stacking and centering).
  *
  * @dependencies
@@ -50,27 +50,20 @@
 }
 
 // -----------------------------------------------------------------------------
-// Site Title / Logo (with Avatar)
+// Site Title / Logo
 // -----------------------------------------------------------------------------
 
 .site-title {
   // Child of .site-header-content
-  display: flex; // To align avatar and title text side-by-side
-  align-items: center; // Vertically center avatar and title text
+  // display: flex; // No longer needed as avatar is removed
+  // align-items: center; // No longer needed
   font-size: 1.8rem;
   font-weight: $font-weight-bold;
   line-height: 1;
   margin: 0;
   flex-shrink: 0;
 
-  .header-avatar {
-    width: 40px; // Size of the avatar in the header
-    height: 40px;
-    border-radius: 50%; // Circular avatar
-    margin-right: $spacing-sm; // Space between avatar and title text (16px)
-    object-fit: cover; // Ensure image covers the area without distortion
-    border: 2px solid $nord8; // Optional: subtle border matching accent
-  }
+  // .header-avatar styles removed as the element is gone from HTML
 
   a {
     // Site title link
@@ -121,17 +114,12 @@
   }
 
   .site-title {
-    text-align: center;
+    text-align: center; // Ensure title text is centered
     font-size: 1.6rem;
-    flex-direction: column; // Stack avatar and title text vertically on mobile
-    align-items: center; // Center them within the .site-title block
+    // flex-direction: column; // No longer needed
+    // align-items: center; // text-align handles centering now
 
-    .header-avatar {
-      margin-right: 0; // Remove right margin
-      margin-bottom: $spacing-xs; // Add bottom margin when stacked
-      width: 48px; // Slightly larger avatar on mobile if desired
-      height: 48px;
-    }
+    // .header-avatar styles removed
   }
 
   .header-nav-area {
@@ -148,10 +136,7 @@
 @media (max-width: 480px) {
   .site-title {
     font-size: 1.5rem;
-    .header-avatar {
-      width: 40px;
-      height: 40px;
-    }
+    // .header-avatar styles removed
   }
   .header-nav-area .site-nav a {
     font-size: 0.9rem;

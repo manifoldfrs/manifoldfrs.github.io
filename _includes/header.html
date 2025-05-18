@@ -1,13 +1,26 @@
 <header class="site-header">
   <div class="site-header-content">
     <div class="site-title">
-      {% if site.author.avatar %}
-      <img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="{{ site.author.name | default: 'Author' }} avatar" class="header-avatar">
-      {% endif %}
       <a href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a>
     </div>
+
     <div class="header-nav-area">
-      {% include navigation.html %}
+      <!-- Desktop Navigation (hidden on mobile) -->
+      <div class="site-nav-desktop-wrapper">
+        {% include navigation.html %}
+      </div>
+
+      <!-- Mobile Navigation Toggle Button -->
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav-mobile-wrapper">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
     </div>
+  </div>
+
+  <!-- Mobile Navigation Panel (hidden by default, toggled by JS) -->
+  <div id="site-nav-mobile-wrapper" class="site-nav-mobile-wrapper">
+    {% include navigation.html %} <!-- Re-use the same navigation structure -->
   </div>
 </header>

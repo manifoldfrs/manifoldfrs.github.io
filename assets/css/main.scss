@@ -14,7 +14,7 @@
  * 2. Base: Reset/normalize styles and base HTML element styling.
  * 3. Typography: Styles for text elements, headings, links, etc.
  * 4. Code: Styles for inline code and code blocks.
- * 5. Layouts: Styles for major layout components (header, footer, grid).
+ * 5. Layouts: Styles for major layout components (header, footer, grid, mobile navigation).
  * 6. Components: Styles for reusable UI components (buttons, cards, navigation).
  * 7. Pages: Specific styles for individual pages or page types.
  * 8. Utilities: Utility classes for common styling needs.
@@ -27,14 +27,14 @@
  * - `_sass/_layout.scss`: Defines styles for layout containers and structure.
  * - `_sass/_header.scss`: Defines styles for the site header.
  * - `_sass/_footer.scss`: Defines styles for the site footer.
- * - `_sass/_navigation.scss`: Defines styles for navigation elements.
+ * - `_sass/_navigation.scss`: Defines styles for desktop navigation elements.
+ * - `_sass/_mobile.scss`: Defines styles for mobile navigation.
  * - `_sass/_home.scss`: Defines styles for the homepage.
  * - `_sass/_pages.scss`: Defines styles for static pages.
  * - `_sass/_blog.scss`: Defines styles for blog listing and post cards.
  * - `_sass/_post.scss`: Defines styles for individual blog posts.
  * - `_sass/_pagination.scss`: Defines styles for pagination component.
  * - `_sass/_categories.scss`: Defines styles for category pages and listings.
- * - (Future partials for components, pages, etc.)
  *
  * @notes
  * - Ensure new SCSS partials are imported in the correct section to maintain the cascade.
@@ -62,7 +62,8 @@
 @import "layout"; // Styles for layout containers and structure
 @import "header"; // Styles for the site header
 @import "footer"; // Styles for the site footer
-@import "navigation"; // Styles for navigation elements
+@import "navigation"; // Styles for desktop navigation elements
+@import "mobile"; // Styles for mobile navigation (Step 13)
 
 // 6. Components
 // Import styles for reusable UI components (e.g., buttons, cards).
