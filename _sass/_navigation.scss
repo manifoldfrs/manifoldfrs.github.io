@@ -1,0 +1,137 @@
+/**
+ * @description
+ * This file defines the SCSS styles for navigation components, primarily the main
+ * site navigation (`.site-nav`). It includes styles for navigation links,
+ * active link states, hover effects, and responsive adjustments for mobile.
+ *
+ * Key features:
+ * - Styles the main navigation container (`.site-nav`).
+ * - Styles individual navigation links (`<a>`) within the navigation.
+ * - Defines `:hover`, `:focus`, and `.active` states for navigation links.
+ * - Implements responsive behavior for mobile navigation (e.g., centering, wrapping).
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: For Nord theme colors, typography, and spacing units.
+ *
+ * @notes
+ * - This file focuses on the visual styling. More complex mobile navigation
+ *   patterns (like a hamburger menu toggle) would require JavaScript and
+ *   additional SCSS for the toggle button and menu panel.
+ * - Assumes navigation links are direct children or within a simple list structure
+ *   inside `.site-nav`.
+ */
+
+// -----------------------------------------------------------------------------
+// Main Site Navigation Container
+// -----------------------------------------------------------------------------
+
+.site-nav {
+  display: flex; // Arrange nav items in a row
+  align-items: center; // Vertically align nav items if they have different heights
+  flex-wrap: wrap; // Allow nav items to wrap on smaller screens if needed
+
+  // If navigation is a list (e.g., <ul> in _includes/navigation.html)
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; // Ensure list items are also in a row
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  li {
+    margin: 0; // Reset list item margin
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Navigation Links
+// -----------------------------------------------------------------------------
+
+.site-nav a {
+  display: inline-block; // Allows padding and margin
+  margin-left: $spacing-md; // Space between navigation items (adjust as needed)
+  padding: ($spacing-xs / 2) $spacing-xs; // Padding around the link text
+  color: $nord6; // Text Color: Nord Snow Storm
+  text-decoration: none;
+  font-weight: $font-weight-regular;
+  border-bottom: 2px solid transparent; // Prepare for active/hover underline effect
+  transition: color $transition-base, border-bottom-color $transition-base;
+
+  &:first-child {
+    margin-left: 0; // No left margin for the first navigation item
+  }
+
+  &:hover,
+  &:focus {
+    color: $nord8; // Primary Accent: Nord Frost Blue on hover/focus
+    border-bottom-color: $nord8; // Show underline on hover/focus
+  }
+
+  // Active state for the current page link
+  &.active {
+    color: $nord8; // Primary Accent for active link
+    border-bottom-color: $nord8; // Persistent underline for active link
+    font-weight: $font-weight-medium; // Slightly bolder for emphasis
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Responsive Adjustments for Navigation
+// -----------------------------------------------------------------------------
+
+@media (max-width: 768px) {
+  // When header stacks title and nav
+  .site-nav {
+    width: 100%; // Allow nav to take full width to center its items
+    justify-content: center; // Center navigation links horizontally
+    margin-top: $spacing-sm; // Space above nav when stacked below title
+
+    ul {
+      justify-content: center; // Center list items if using ul
+      width: 100%;
+    }
+
+    a {
+      margin: ($spacing-xs / 2) $spacing-xs; // Adjust spacing for centered mobile nav items
+      font-size: 0.95rem; // Slightly smaller font for mobile nav
+
+      &:first-child {
+        // Reset margin-left for first child in mobile if it was making things uneven
+        margin-left: ($spacing-xs / 2);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  // For very small screens
+  .site-nav a {
+    padding: ($spacing-xs / 2) ($spacing-xs / 2); // Reduce padding
+    margin: ($spacing-xs / 2) ($spacing-xs / 2); // Reduce margins
+    font-size: 0.9rem; // Further reduce font size
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Styles for a potential mobile navigation toggle (Hamburger Menu)
+// To be implemented with JavaScript (Step 19)
+// -----------------------------------------------------------------------------
+
+// .nav-toggle {
+//   display: none; // Hidden by default, shown on mobile
+//   // ... styles for hamburger icon ...
+//   @media (max-width: 768px) {
+//     display: block;
+//   }
+// }
+
+// .nav-menu {
+//   // Styles for the mobile menu panel
+//   @media (max-width: 768px) {
+//     &.is-active {
+//       // Styles when menu is open
+//     }
+//   }
+// }

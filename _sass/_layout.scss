@@ -1,0 +1,138 @@
+/**
+ * @description
+ * This file defines the SCSS styles for the main layout structure of the website.
+ * It includes styles for the primary content container, ensuring consistent
+ * width, padding, and alignment across different pages. It also manages
+ * the flexbox behavior of the main body to allow for sticky footers.
+ *
+ * Key features:
+ * - Defines a `.container` class for consistent content width and padding.
+ * - Styles for the main content area (`.site-content`) to ensure it expands
+ *   and pushes the footer down correctly.
+ * - Implements responsive adjustments for padding on different screen sizes.
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: For spacing units, content width, and color variables.
+ *
+ * @notes
+ * - This file provides the foundational structure for page layouts.
+ * - Specific page layouts or components might add further structural styles.
+ */
+
+// -----------------------------------------------------------------------------
+// Main Body and Site Wrapper (if any)
+// -----------------------------------------------------------------------------
+
+// body is already styled in _base.scss to be a flex-column and min-height: 100vh
+
+// -----------------------------------------------------------------------------
+// Content Container
+// -----------------------------------------------------------------------------
+
+.container {
+  width: 100%;
+  max-width: $content-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $content-padding-mobile;
+  padding-right: $content-padding-mobile;
+
+  @media (min-width: ($content-max-width + $content-padding-desktop * 2)) {
+    // Apply desktop padding only if the screen is wider than the content + padding
+    padding-left: $content-padding-desktop;
+    padding-right: $content-padding-desktop;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Main Content Area
+// -----------------------------------------------------------------------------
+
+.site-content {
+  flex-grow: 1; // Allows the main content to take up available space, pushing footer down
+  padding-top: $spacing-lg; // Default top padding for content area
+  padding-bottom: $spacing-lg; // Default bottom padding for content area
+}
+
+// -----------------------------------------------------------------------------
+// Page/Post Headers (Common structure for titles and meta)
+// -----------------------------------------------------------------------------
+// This can be a common styling for .page-header, .post-header, .portfolio-header
+// Moved from main.scss
+.page-header,
+.post-header,
+.portfolio-header {
+  margin-bottom: $spacing-lg;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: $spacing-md;
+
+  .page-title,
+  .post-title,
+  .portfolio-title {
+    margin-top: 0; // Remove default top margin from heading if it's the title
+    margin-bottom: $spacing-xs;
+    color: $nord6; // Ensure titles are using the main text color
+  }
+
+  .post-meta,
+  .portfolio-meta {
+    font-size: 0.9rem;
+    color: $nord4; // Lighter text for meta information
+    opacity: 0.8; // Slight transparency for subtlety
+
+    a {
+      color: $nord4; // Meta links should match surrounding text color
+      border-bottom: 1px dotted $nord4; // Subtle underline for meta links
+      &:hover {
+        color: $nord8; // Primary accent on hover
+        border-bottom-color: $nord8;
+      }
+    }
+  }
+}
+
+// Responsive adjustments for headers if needed
+@media (max-width: 768px) {
+  .page-header,
+  .post-header,
+  .portfolio-header {
+    text-align: center; // Center align headers on smaller screens
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Content Sections (e.g., .post-content, .page-content)
+// -----------------------------------------------------------------------------
+// Moved from main.scss
+.post-content,
+.page-content,
+.portfolio-content {
+  // General styling for content areas within posts, pages, or portfolio items
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: $spacing-xl; // More top margin for headings within content
+    &:first-child {
+      margin-top: $spacing-md; // Less top margin if it's the first element in content
+    }
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote {
+    max-width: $content-max-width; // Ensure textual elements don't become too wide
+  }
+
+  img {
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-md;
+    border-radius: $border-radius-base;
+    // Potentially add a subtle border or shadow if desired by the design
+    // border: 1px solid $nord3;
+  }
+}

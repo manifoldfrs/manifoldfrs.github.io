@@ -1,0 +1,115 @@
+/**
+ * @description
+ * This file defines the SCSS styles for the site footer component.
+ * It includes styling for social media links, copyright information, and
+ * any other content present in the footer. The footer is designed to be
+ * clean and unobtrusive.
+ *
+ * Key features:
+ * - Styles the main footer container (`.site-footer`).
+ * - Styles social media links (`.social-links`) for consistent appearance.
+ * - Styles the copyright notice (`.copyright`).
+ * - Ensures proper spacing and alignment within the footer.
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: For Nord theme colors, typography, and spacing units.
+ *
+ * @notes
+ * - The footer is typically placed at the bottom of the `default.html` layout.
+ * - Social link icons, if used, would require additional styling or an icon font.
+ */
+
+// -----------------------------------------------------------------------------
+// Site Footer Container
+// -----------------------------------------------------------------------------
+
+.site-footer {
+  margin-top: $spacing-xxl; // Ample space above the footer
+  padding: $spacing-lg 0; // Vertical padding within the footer
+  border-top: 1px solid $nord3; // Subtle top border to separate from content
+  background-color: $color-primary-background; // Consistent background
+  color: $nord4; // Slightly lighter text color for footer content for subtlety
+  font-size: 0.9rem; // Slightly smaller font size for footer text
+
+  .container {
+    // The .container class from _layout.scss is used here
+    text-align: center; // Center align footer content by default
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Social Media Links (if directly in footer, not just from _includes/social-links.html)
+// -----------------------------------------------------------------------------
+// Styles for the wrapper if .social-links is used directly in footer.html
+// The _social-links.html include itself has a .social-links class.
+// These styles will apply to the ones in _includes/social-links.html.
+
+.social-links {
+  // Styles for the container of social links, typically within _includes/social-links.html
+  // but can also be used if social links are directly in footer.
+  display: flex;
+  flex-wrap: wrap; // Allow links to wrap on smaller screens
+  justify-content: center; // Center the links
+  align-items: center;
+  gap: $spacing-sm; // Space between social links
+  margin-bottom: $spacing-md; // Space below the social links block
+
+  a {
+    color: $nord4; // Use the footer's text color for consistency
+    text-decoration: none;
+    border-bottom: none; // No underline for social links
+    opacity: 0.8; // Slightly transparent for subtlety
+    transition: opacity $transition-base, color $transition-base;
+
+    &:hover,
+    &:focus {
+      opacity: 1; // Full opacity on hover
+      color: $nord8; // Primary Accent: Nord Frost Blue on hover
+    }
+
+    // If using icons, you'd style them here, e.g., svg fill or font color
+    // svg {
+    //   width: 20px;
+    //   height: 20px;
+    //   fill: currentColor; // Icon color inherits from link color
+    // }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Copyright Notice
+// -----------------------------------------------------------------------------
+
+.copyright {
+  font-size: 0.85rem; // Even smaller for copyright, very subtle
+  opacity: 0.7; // More transparency for copyright text
+  margin-top: $spacing-md; // Ensure some space if social links are not present or above it
+
+  a {
+    // Style for any links within the copyright, if any
+    color: $nord4;
+    text-decoration: underline;
+    border-bottom: none;
+
+    &:hover,
+    &:focus {
+      color: $nord8;
+      text-decoration: none;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Responsive Adjustments for Footer
+// -----------------------------------------------------------------------------
+
+@media (max-width: 768px) {
+  .site-footer {
+    margin-top: $spacing-xl; // Reduce top margin on smaller screens
+    padding: $spacing-md 0; // Reduce padding on smaller screens
+  }
+
+  .social-links {
+    gap: $spacing-xs; // Reduce gap between social links on smaller screens
+  }
+}

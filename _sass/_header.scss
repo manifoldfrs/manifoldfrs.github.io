@@ -1,0 +1,93 @@
+/**
+ * @description
+ * This file defines the SCSS styles for the site header component.
+ * It includes styling for the site title/logo and the container for the main navigation.
+ * The header is designed to be responsive, adapting its layout for smaller screens.
+ *
+ * Key features:
+ * - Styles the main header container (`.site-header`).
+ * - Styles the site title (`.site-title`) for branding.
+ * - Ensures proper alignment and spacing of header elements.
+ * - Implements responsive behavior for mobile devices (e.g., stacking elements).
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: For Nord theme colors, typography, and spacing units.
+ * - `_sass/_navigation.scss`: Relies on navigation styles for the embedded navigation.
+ *
+ * @notes
+ * - The actual navigation links are styled in `_navigation.scss`.
+ * - Responsive behavior might involve JavaScript for more complex interactions like a hamburger menu.
+ */
+
+// -----------------------------------------------------------------------------
+// Site Header Container
+// -----------------------------------------------------------------------------
+
+.site-header {
+  padding-top: $spacing-lg;
+  padding-bottom: $spacing-lg;
+  // background-color: $nord1; // Optional: Slightly different background for header
+  // border-bottom: 1px solid $nord3; // Optional: Subtle border at the bottom of header
+
+  .container {
+    // The .container class from _layout.scss is used here
+    display: flex;
+    justify-content: space-between; // Pushes title to left, nav to right
+    align-items: center;
+    flex-wrap: wrap; // Allow wrapping for responsiveness
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Site Title / Logo
+// -----------------------------------------------------------------------------
+
+.site-title {
+  font-size: 1.8rem; // Prominent size for site title
+  font-weight: $font-weight-bold;
+  line-height: 1; // Ensure title doesn't take too much vertical space
+  margin: 0; // Remove default margins from h1/p if used for site title
+
+  a {
+    color: $nord6; // Text Color: Nord Snow Storm
+    text-decoration: none;
+    border-bottom: none; // No underline for site title link
+    transition: color $transition-base;
+
+    &:hover,
+    &:focus {
+      color: $nord8; // Primary Accent: Nord Frost Blue on hover
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Responsive Adjustments for Header
+// -----------------------------------------------------------------------------
+
+@media (max-width: 768px) {
+  // Targeting tablets and smaller devices
+  .site-header {
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-md;
+
+    .container {
+      flex-direction: column; // Stack title and navigation vertically
+      align-items: center; // Center-align items when stacked
+    }
+
+    .site-title {
+      margin-bottom: $spacing-md; // Add space below title when stacked above navigation
+      text-align: center; // Center title text
+      font-size: 1.6rem; // Slightly smaller title on mobile
+    }
+    // Navigation adjustments are handled in _navigation.scss for mobile
+  }
+}
+
+@media (max-width: 480px) {
+  // Targeting smaller mobile devices
+  .site-title {
+    font-size: 1.5rem; // Even smaller title for very small screens
+  }
+}

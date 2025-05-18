@@ -24,7 +24,11 @@
  * - `_sass/_base.scss`: Provides foundational HTML element styles.
  * - `_sass/_typography.scss`: Defines typography styles.
  * - `_sass/_code.scss`: Defines styles for code blocks.
- * - (Future partials for layouts, components, etc.)
+ * - `_sass/_layout.scss`: Defines styles for layout containers and structure.
+ * - `_sass/_header.scss`: Defines styles for the site header.
+ * - `_sass/_footer.scss`: Defines styles for the site footer.
+ * - `_sass/_navigation.scss`: Defines styles for navigation elements.
+ * - (Future partials for components, pages, etc.)
  *
  * @notes
  * - Ensure new SCSS partials are imported in the correct section to maintain the cascade.
@@ -49,377 +53,40 @@
 
 // 5. Layouts
 // Import styles for major layout components (e.g., header, footer, grid system).
-// Example:
-// @import "layout/header";
-// @import "layout/footer";
-// @import "layout/grid";
-// @import "layout"; // Will be created in Step 7
+@import "layout"; // Styles for layout containers and structure
+@import "header"; // Styles for the site header
+@import "footer"; // Styles for the site footer
+@import "navigation"; // Styles for navigation elements
 
 // 6. Components
-// Import styles for reusable UI components (e.g., buttons, cards, navigation).
+// Import styles for reusable UI components (e.g., buttons, cards).
 // Example:
 // @import "components/buttons";
 // @import "components/cards";
-// @import "components/navigation"; // Will be created in Step 7
+// @import "components/post-card"; // Will be created in Step 10
+// @import "components/pagination"; // Will be created in Step 10
 
 // 7. Pages
 // Import specific styles for individual pages or page types.
 // Example:
 // @import "pages/home"; // Will be created in Step 8
-// @import "pages/about"; // Will be created in Step 9
+// @import "pages/blog"; // Will be created in Step 10
+// @import "pages/post"; // Will be created in Step 11
+// @import "pages/portfolio"; // Will be created in Step 13
 
 // 8. Utilities
 // Import utility classes (e.g., spacing helpers, visibility classes).
 // Example:
 // @import "utilities";
 
-// Styles from the old main.scss (to be refactored or integrated into new partials)
-// For now, I'm keeping them here, but they should be moved into their respective
-// partials (_layout.scss, _header.scss, _footer.scss, _navigation.scss, _home.scss etc.)
-// as per the implementation plan.
-
-// Header (Should go into _sass/_header.scss - Step 7)
-.site-header {
-  padding: $spacing-lg 0; // Vertical padding for the entire header area
-
-  .container {
-    // This is the direct parent of site-title and site-nav
-    display: flex;
-    justify-content: space-between; // Pushes title to left, nav to right
-    align-items: center;
-  }
-
-  .site-title {
-    font-size: 1.5rem;
-    font-weight: $font-weight-bold;
-
-    a {
-      color: $color-text;
-      border-bottom: none;
-
-      &:hover {
-        color: $color-primary-accent;
-      }
-    }
-  }
-
-  // Navigation specific styles should go into _sass/_navigation.scss (Step 7)
-  .site-nav {
-    a {
-      margin-left: $spacing-md; // Spacing between nav items
-      color: $color-text;
-      border-bottom: none;
-      padding-bottom: $spacing-xs / 2;
-
-      &:hover {
-        color: $color-primary-accent;
-        border-bottom: 2px solid $color-primary-accent;
-      }
-      &.active {
-        color: $color-primary-accent;
-        border-bottom: 2px solid $color-primary-accent;
-        font-weight: $font-weight-medium;
-      }
-    }
-  }
-}
-
-// Footer (Should go into _sass/_footer.scss - Step 7)
-.site-footer {
-  margin-top: $spacing-xxl;
-  padding: $spacing-lg 0;
-  border-top: 1px solid $border-color;
-
-  .social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: $spacing-sm;
-    margin-bottom: $spacing-md;
-    justify-content: center;
-
-    a {
-      color: $color-text;
-      opacity: 0.8;
-      border-bottom: none;
-      transition: $transition-base;
-
-      &:hover {
-        opacity: 1;
-        color: $color-primary-accent;
-      }
-    }
-  }
-
-  .copyright {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    text-align: center;
-  }
-}
-
-// Home Page Specific Styles (Should go into _sass/_home.scss - Step 8)
-.home {
-  .intro {
-    margin: $spacing-xl 0;
-    text-align: center;
-    font-size: 1.2rem;
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: $spacing-sm;
-    }
-    p {
-      font-size: 1.1rem;
-      color: $nord4;
-    }
-  }
-
-  .recent-posts {
-    h2 {
-      margin-bottom: $spacing-lg;
-      text-align: center;
-      font-size: 1.8rem;
-    }
-
-    .post-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        margin-bottom: $spacing-xl;
-        padding-bottom: $spacing-xl;
-        border-bottom: 1px solid $border-color;
-
-        &:last-child {
-          border-bottom: none;
-          margin-bottom: 0;
-          padding-bottom: 0;
-        }
-      }
-
-      h3 {
-        margin-top: 0;
-        margin-bottom: $spacing-xs;
-        font-size: 1.5rem;
-        a {
-          border-bottom: none;
-          &:hover {
-            color: $color-primary-accent;
-          }
-        }
-      }
-
-      .post-date {
-        display: block;
-        font-size: 0.9rem;
-        color: $nord4;
-        opacity: 0.8;
-        margin-bottom: $spacing-sm;
-      }
-      p {
-        color: $nord5;
-        font-size: 1rem;
-        line-height: 1.6;
-      }
-      + a {
-        display: block;
-        text-align: center;
-        margin-top: $spacing-lg;
-        font-weight: $font-weight-medium;
-        padding: $spacing-xs $spacing-sm;
-        border: 1px solid $color-links;
-        border-radius: $border-radius-base;
-        &:hover {
-          background-color: $color-links;
-          color: $color-primary-background;
-          border-color: $color-links;
-        }
-      }
-    }
-  }
-}
-
-// Page Specific Styles (Should go into _sass/_pages.scss or _sass/_page.scss - Step 9)
-.page-header,
-.post-header,
-.portfolio-header {
-  margin-bottom: $spacing-lg;
-  border-bottom: 1px solid $border-color;
-  padding-bottom: $spacing-md;
-
-  .page-title,
-  .post-title,
-  .portfolio-title {
-    margin-top: 0;
-    margin-bottom: $spacing-xs;
-  }
-
-  .post-meta,
-  .portfolio-meta {
-    font-size: 0.9rem;
-    color: $nord4;
-    opacity: 0.8;
-    a {
-      color: $nord4;
-      border-bottom: 1px dotted $nord4;
-      &:hover {
-        color: $nord8;
-        border-bottom-color: $nord8;
-      }
-    }
-  }
-}
-
-// Post Content (Should go into _sass/_post.scss - Step 11)
-.post-content,
-.page-content,
-.portfolio-content {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: $spacing-xl;
-  }
-}
-
-// Blog index and Portfolio index specific (Should go into _sass/_blog.scss & _sass/_portfolio.scss - Steps 10 & 13)
-.blog-posts .post-item,
-.portfolio-items .portfolio-item {
-  margin-bottom: $spacing-xl;
-  padding-bottom: $spacing-xl;
-  border-bottom: 1px solid $border-color;
-
-  &:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .post-title a,
-  .portfolio-title a {
-    border-bottom: none;
-    &:hover {
-      color: $color-primary-accent;
-    }
-  }
-  .post-meta,
-  .portfolio-meta {
-    font-size: 0.9rem;
-    color: $nord4;
-    margin-bottom: $spacing-sm;
-  }
-  .post-excerpt,
-  .portfolio-excerpt {
-    margin-bottom: $spacing-sm;
-  }
-  .read-more {
-    font-weight: $font-weight-medium;
-    display: inline-block;
-    padding: $spacing-xs/2 $spacing-sm;
-    border: 1px solid $color-links;
-    border-radius: $border-radius-base;
-    &:hover {
-      background-color: $color-links;
-      color: $color-primary-background;
-      border-color: $color-links;
-    }
-  }
-}
-
-// Portfolio specific adjustments (Should go into _sass/_portfolio.scss or _sass/_portfolio-item.scss - Steps 13 & 14)
-.portfolio-image,
-.portfolio-featured-image {
-  margin-bottom: $spacing-md;
-  img {
-    border-radius: $border-radius-base;
-    border: 1px solid $border-color;
-  }
-}
-
-.portfolio-technologies {
-  margin-top: $spacing-lg;
-  h3 {
-    font-size: 1.2rem;
-    margin-bottom: $spacing-sm;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: $spacing-xs;
-    li {
-      background-color: $nord1;
-      padding: $spacing-xs/2 $spacing-xs;
-      border-radius: $border-radius-base;
-      font-size: 0.9rem;
-      color: $nord5;
-    }
-  }
-}
-
-.post-share,
-.portfolio-share {
-  margin-top: $spacing-lg;
-  padding-top: $spacing-md;
-  border-top: 1px solid $border-color;
-  h4 {
-    font-size: 1.1rem;
-    margin-bottom: $spacing-sm;
-  }
-  a {
-    margin-right: $spacing-sm;
-  }
-}
-
-// Media queries (Can be global or in specific component files)
-@media (max-width: 768px) {
-  .site-header {
-    // Outer .site-header no longer needs flex properties for layout direction here,
-    // as .container inside it handles the item layout.
-    // It still provides the overall padding for the header area.
-
-    .container {
-      // This is the flex container for title and nav
-      flex-direction: column; // Stack title and nav vertically
-      align-items: center; // Center them horizontally
-    }
-
-    .site-title {
-      margin-bottom: $spacing-sm; // Space below title when stacked
-    }
-
-    .site-nav {
-      // width: 100%; // .site-nav will take available width in column flow
-      display: flex; // Arrange nav links in a row
-      justify-content: center; // Center nav links horizontally
-      flex-wrap: wrap; // Allow nav links to wrap if they don't fit
-      margin-top: $spacing-xs; // Add some space above nav when stacked
-
-      a {
-        margin: ($spacing-xs / 2) $spacing-xs; // Adjust spacing for centered mobile nav items
-        // This overrides the margin-left from desktop to provide even spacing
-      }
-    }
-  }
-
-  .home .intro {
-    font-size: 1.1rem;
-    h1 {
-      font-size: 1.8rem;
-    }
-  }
-
-  .home .recent-posts h2 {
-    font-size: 1.5rem;
-  }
-
-  .page-header,
-  .post-header,
-  .portfolio-header {
-    text-align: center;
-  }
-}
+// Styles that were previously in main.scss have been moved to their respective partials:
+// - Header styles -> _header.scss
+// - Footer styles -> _footer.scss
+// - Navigation styles within header -> _navigation.scss
+// - Home page specific styles will go into _home.scss (Step 8)
+// - Page/Post/Portfolio header styles -> _layout.scss (as a common element styling)
+// - Content styles (post-content, page-content) -> _layout.scss
+// - Blog/Portfolio item listing styles will go into _blog.scss, _portfolio.scss (Steps 10 & 13)
+// - Portfolio image/tech styles will go into _portfolio.scss or _portfolio-item.scss (Steps 13 & 14)
+// - Share styles will go into _share.scss (Step 17)
+// - Media queries are now distributed into the relevant partials or will be added to mobile-specific partials.
