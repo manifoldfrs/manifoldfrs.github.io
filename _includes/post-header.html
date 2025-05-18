@@ -6,7 +6,7 @@
     {% if page.categories.size > 0 %}
     <span class="separator">&middot;</span>
     <span class="post-categories">
-      In {% for category in page.categories %}
+      Tags {% for category in page.categories %}
       <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category | escape }}</a>{% unless forloop.last %}, {% endunless %} {% endfor %}
     </span>
     {% endif %} {% assign words = page.content | number_of_words %} {% if words < 180 %} {% assign read_time = 1 %} {% else %} {% assign read_time = words | divided_by: 180 %} {% endif %}
