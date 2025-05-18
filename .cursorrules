@@ -1,0 +1,51 @@
+[
+    {
+        "name": "general",
+        "description": "General rules for working on the frshbb.github.io Jekyll site.",
+        "glob": "*",
+        "rules": [
+            "Ensure all changes are compatible with Jekyll and GitHub Pages.",
+            "Follow Markdown best practices for content files.",
+            "Keep the site structure organized and maintainable."
+        ]
+    },
+    {
+        "name": "frontend",
+        "description": "Rules for frontend development (HTML, SCSS, JS).",
+        "glob": [
+            "*.html",
+            "*.scss",
+            "*.js",
+            "_layouts/*",
+            "_includes/*",
+            "assets/*"
+        ],
+        "rules": [
+            "Ensure HTML is semantic and accessible.",
+            "Follow SCSS best practices for styling and maintain BEM naming conventions if applicable.",
+            "Optimize assets (images, scripts, styles) for performance.",
+            "Ensure layouts and includes are modular and reusable."
+        ]
+    },
+    {
+        "name": "posts",
+        "description": "Rules for creating and editing blog posts.",
+        "glob": "_posts/*.md",
+        "rules": [
+            "Ensure all posts have a valid frontmatter (layout, title, date, categories).",
+            "Follow the filename convention: YYYY-MM-DD-title.md.",
+            "Write content in clear and concise Markdown.",
+            "Optimize images and use appropriate alt text."
+        ]
+    },
+    {
+        "name": "github-actions",
+        "description": "Rules for GitHub Actions workflows.",
+        "glob": ".github/workflows/*.yml",
+        "rules": [
+            "Ensure workflows are well-documented and easy to understand.",
+            "Follow YAML best practices and maintain consistent formatting.",
+            "Test workflow changes thoroughly before merging."
+        ]
+    }
+]
