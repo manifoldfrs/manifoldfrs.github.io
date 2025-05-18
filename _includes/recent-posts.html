@@ -1,0 +1,55 @@
+{% comment %}
+/**
+ * @description
+ * This component displays a list of the most recent blog posts,
+ * typically used on the homepage.
+ *
+ * Key features:
+ * - Fetches the latest posts from `site.posts`.
+ * - Limits the number of posts displayed (default: 5, as per tech spec, can be adjusted).
+ * - Displays post title, date, and excerpt.
+ * - Provides a link to the main blog page to view all posts.
+ *
+ * @dependencies
+ * - Jekyll's `site.posts` collection.
+ * - Styles from `_sass/_home.scss` for `.recent-posts-section`, `.post-list-item`, etc.
+ * - `_config.yml` for `site.baseurl`.
+ *
+ * @notes
+ * - The number of posts displayed can be configured by changing the `limit` parameter in the for loop.
+ * - Ensure posts have `title`, `date`, and `excerpt` in their frontmatter.
+ */
+{% endcomment %}
+<section class="recent-posts-section">
+  <div class="container">
+    <h2>Recent Thoughts</h2>
+    <ul class="post-list">
+      {% for post in site.posts limit:5 %}
+        <li class="post-list-item">
+          <h3 class="post-list-title">
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h3>
+          <p class="post-list-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            {% if post.categories.size > 0 %}
+              <span class="post-categories">
+                &middot; In {% for category in post.categories limit:1 %}
+                  <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category }}</a>
+                {% endfor %}
+              </span>
+            {% endif %}
+          </p>
+          <div class="post-list-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </div>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="read-more-link">Read More &rarr;</a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% if site.posts.size > 5 %}
+      <div class="view-all-posts">
+        <a href="{{ "/blog/" | prepend: site.baseurl }}" class="btn btn-secondary">View All Posts</a>
+      </div>
+    {% endif %}
+  </div>
+</section>

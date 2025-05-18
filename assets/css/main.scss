@@ -28,6 +28,7 @@
  * - `_sass/_header.scss`: Defines styles for the site header.
  * - `_sass/_footer.scss`: Defines styles for the site footer.
  * - `_sass/_navigation.scss`: Defines styles for navigation elements.
+ * - `_sass/_home.scss`: Defines styles for the homepage.
  * - (Future partials for components, pages, etc.)
  *
  * @notes
@@ -68,8 +69,8 @@
 
 // 7. Pages
 // Import specific styles for individual pages or page types.
+@import "home"; // Styles for the homepage (Step 8)
 // Example:
-// @import "pages/home"; // Will be created in Step 8
 // @import "pages/blog"; // Will be created in Step 10
 // @import "pages/post"; // Will be created in Step 11
 // @import "pages/portfolio"; // Will be created in Step 13
@@ -83,7 +84,6 @@
 // - Header styles -> _header.scss
 // - Footer styles -> _footer.scss
 // - Navigation styles within header -> _navigation.scss
-// - Home page specific styles will go into _home.scss (Step 8)
 // - Page/Post/Portfolio header styles -> _layout.scss (as a common element styling)
 // - Content styles (post-content, page-content) -> _layout.scss
 // - Blog/Portfolio item listing styles will go into _blog.scss, _portfolio.scss (Steps 10 & 13)

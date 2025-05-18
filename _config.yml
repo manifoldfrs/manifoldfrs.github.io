@@ -1,7 +1,7 @@
 # Site settings
-title: The Esoteric Garden
-email: your-email@example.com
-description: The Esoteric Garden
+title: An Esoteric Garden
+email: faris@duck.com
+description: An Esoteric Garden
 baseurl: "/frshbb.github.io"
 url: "https://manifoldfrs.github.io"
 enforce_ssl: "https://manifoldfrs.github.io/frshbb.github.io/"
@@ -12,9 +12,8 @@ timezone: UTC
 author:
   name: Faris Habib
   bio: >-
-    Explorer of ideas, creator of things, perpetual learner.
   location: Nomad
-  avatar: /assets/images/avatar.jpg
+  avatar: /assets/images/chicago_talk_2024.jpg
 
 # Social media links
 social:

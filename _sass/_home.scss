@@ -1,0 +1,233 @@
+/**
+ * @description
+ * This file contains SCSS styles specific to the homepage (`index.html`).
+ * It styles the introduction/bio section and the recent posts listing.
+ *
+ * Key features:
+ * - Styles for the introduction section, including avatar and bio text.
+ * - Styles for the recent posts section, including the list and individual post items.
+ * - Adheres to the Nord color scheme and design system typography/spacing.
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: For Nord theme colors, typography settings, and spacing units.
+ * - `_sass/_mixins.scss` (if created for common patterns like buttons).
+ *
+ * @notes
+ * - These styles are applied to elements within `_includes/intro.html` and `_includes/recent-posts.html`.
+ */
+
+// -----------------------------------------------------------------------------
+// Introduction Section (`.intro-section`)
+// -----------------------------------------------------------------------------
+
+.intro-section {
+  padding: $spacing-xxl 0; // Generous padding for impact
+  text-align: center; // Center align content within the intro section
+  // background-color: $nord1; // Optional: Slightly different background for this section
+  // border-bottom: 1px solid $nord3; // Optional: separator
+
+  .intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      text-align: left;
+      gap: $spacing-lg;
+      max-width: $content-max-width + 200px; // Allow a bit wider for side-by-side avatar
+      margin: 0 auto;
+    }
+  }
+
+  .avatar-container {
+    flex-shrink: 0; // Prevent avatar from shrinking
+  }
+
+  .avatar {
+    width: 120px; // Avatar size
+    height: 120px;
+    border-radius: 50%; // Circular avatar
+    border: 3px solid $nord8; // Primary accent border
+    object-fit: cover; // Ensure the image covers the area without distortion
+
+    @media (min-width: 768px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .bio {
+    h1 {
+      font-size: 2.2rem; // Slightly smaller than a typical page H1 for this context
+      color: $nord6; // Main text color
+      margin-top: 0;
+      margin-bottom: $spacing-sm;
+
+      @media (min-width: 768px) {
+        font-size: 2.8rem;
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: $nord4; // Slightly lighter text for bio
+      max-width: 600px; // Keep bio text readable
+      margin-left: auto; // Center paragraph if text-align is left on .bio but container is wider
+      margin-right: auto;
+
+      @media (min-width: 768px) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    .btn {
+      // Basic button styling if added to intro
+      margin-top: $spacing-md;
+      display: inline-block;
+      padding: $spacing-sm $spacing-lg;
+      background-color: $nord8; // Primary accent
+      color: $nord0; // Dark background color for text on light button
+      text-decoration: none;
+      border-radius: $border-radius-base;
+      font-weight: $font-weight-medium;
+      transition: background-color $transition-base;
+
+      &:hover {
+        background-color: lighten($nord8, 10%);
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Recent Posts Section (`.recent-posts-section`)
+// -----------------------------------------------------------------------------
+
+.recent-posts-section {
+  padding: $spacing-xl 0;
+  background-color: $nord1; // Use secondary background for this section to differentiate
+
+  .container {
+    // Uses the global .container for width constraints
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: $spacing-lg;
+    color: $nord6; // Main text color for section heading
+  }
+
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: $spacing-lg; // Gap between post items
+
+    // For a single column layout by default
+    // For multiple columns on larger screens:
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Responsive grid
+    }
+  }
+
+  .post-list-item {
+    background-color: $nord0; // Primary background for cards
+    padding: $spacing-md;
+    border-radius: $border-radius-base;
+    border: 1px solid $nord3; // Subtle border for card
+    display: flex;
+    flex-direction: column; // Stack content vertically within the card
+    transition: transform $transition-base, box-shadow $transition-base;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba($nord0, 0.2);
+    }
+  }
+
+  .post-list-title {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: $spacing-xs;
+
+    a {
+      color: $nord8; // Primary accent for post titles
+      text-decoration: none;
+      border-bottom: none;
+
+      &:hover {
+        color: lighten($nord8, 10%);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .post-list-meta {
+    font-size: 0.85rem;
+    color: $nord4; // Lighter text for meta
+    margin-bottom: $spacing-sm;
+
+    .post-categories a {
+      color: $nord4;
+      text-decoration: none;
+      border-bottom: 1px dotted $nord4;
+      &:hover {
+        color: $nord14; // Secondary accent for category hover
+        border-bottom-color: $nord14;
+      }
+    }
+  }
+
+  .post-list-excerpt {
+    font-size: 0.95rem;
+    color: $nord5; // Slightly lighter than main text
+    line-height: 1.7;
+    margin-bottom: $spacing-md;
+    flex-grow: 1; // Allows excerpt to take available space, pushing "Read More" down
+  }
+
+  .read-more-link {
+    font-size: 0.9rem;
+    font-weight: $font-weight-medium;
+    color: $nord10; // Link color
+    text-decoration: none;
+    align-self: flex-start; // Align to the left
+
+    &:hover {
+      color: lighten($nord10, 10%);
+      text-decoration: underline;
+    }
+  }
+
+  .view-all-posts {
+    text-align: center;
+    margin-top: $spacing-xl;
+
+    .btn {
+      // General button styling, could be a mixin
+      display: inline-block;
+      padding: $spacing-sm $spacing-lg;
+      text-decoration: none;
+      border-radius: $border-radius-base;
+      font-weight: $font-weight-medium;
+      transition: background-color $transition-base, color $transition-base;
+    }
+
+    .btn-secondary {
+      background-color: $nord3; // A neutral background
+      color: $nord6; // Main text color
+      border: 1px solid $nord4;
+
+      &:hover {
+        background-color: $nord4;
+        color: $nord0;
+      }
+    }
+  }
+}
