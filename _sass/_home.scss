@@ -1,10 +1,11 @@
 /**
  * @description
  * This file contains SCSS styles specific to the homepage (`index.html`).
- * It styles the introduction/bio section and the recent posts listing.
+ * It styles the introduction/bio section (which has been simplified)
+ * and the recent posts listing.
  *
  * Key features:
- * - Styles for the introduction section, including avatar and bio text.
+ * - Styles for the (now minimal) introduction section.
  * - Styles for the recent posts section, including the list and individual post items.
  * - Adheres to the Nord color scheme and design system typography/spacing.
  *
@@ -14,93 +15,38 @@
  *
  * @notes
  * - These styles are applied to elements within `_includes/intro.html` and `_includes/recent-posts.html`.
+ * - The intro section styling has been heavily simplified due to content removal/relocation.
  */
 
 // -----------------------------------------------------------------------------
-// Introduction Section (`.intro-section`)
+// Introduction Section (`.intro-section`) - Simplified
 // -----------------------------------------------------------------------------
 
 .intro-section {
-  padding: $spacing-xxl 0; // Generous padding for impact
-  text-align: center; // Center align content within the intro section
+  padding: $spacing-xl 0; // Reduced padding as content is minimal
+  text-align: center;
   // background-color: $nord1; // Optional: Slightly different background for this section
   // border-bottom: 1px solid $nord3; // Optional: separator
 
   .intro-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: $spacing-md;
+    // This container might be empty or hold new, simpler content.
+    // Styling for avatar and bio that were previously here have been removed or are now irrelevant.
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // gap: $spacing-md;
 
-    @media (min-width: 768px) {
-      flex-direction: row;
-      text-align: left;
-      gap: $spacing-lg;
-      max-width: $content-max-width + 200px; // Allow a bit wider for side-by-side avatar
-      margin: 0 auto;
-    }
+    // @media (min-width: 768px) {
+    //   flex-direction: row;
+    //   text-align: left;
+    //   gap: $spacing-lg;
+    //   max-width: $content-max-width + 200px;
+    //   margin: 0 auto;
+    // }
   }
 
-  .avatar-container {
-    flex-shrink: 0; // Prevent avatar from shrinking
-  }
-
-  .avatar {
-    width: 120px; // Avatar size
-    height: 120px;
-    border-radius: 50%; // Circular avatar
-    border: 3px solid $nord8; // Primary accent border
-    object-fit: cover; // Ensure the image covers the area without distortion
-
-    @media (min-width: 768px) {
-      width: 150px;
-      height: 150px;
-    }
-  }
-
-  .bio {
-    h1 {
-      font-size: 2.2rem; // Slightly smaller than a typical page H1 for this context
-      color: $nord6; // Main text color
-      margin-top: 0;
-      margin-bottom: $spacing-sm;
-
-      @media (min-width: 768px) {
-        font-size: 2.8rem;
-      }
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: $nord4; // Slightly lighter text for bio
-      max-width: 600px; // Keep bio text readable
-      margin-left: auto; // Center paragraph if text-align is left on .bio but container is wider
-      margin-right: auto;
-
-      @media (min-width: 768px) {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-
-    .btn {
-      // Basic button styling if added to intro
-      margin-top: $spacing-md;
-      display: inline-block;
-      padding: $spacing-sm $spacing-lg;
-      background-color: $nord8; // Primary accent
-      color: $nord0; // Dark background color for text on light button
-      text-decoration: none;
-      border-radius: $border-radius-base;
-      font-weight: $font-weight-medium;
-      transition: background-color $transition-base;
-
-      &:hover {
-        background-color: lighten($nord8, 10%);
-      }
-    }
-  }
+  // .avatar-container, .avatar, .bio specific styles are removed as content is gone from intro.html
+  // If new content is added to intro.html, new styles can be defined here.
 }
 
 // -----------------------------------------------------------------------------

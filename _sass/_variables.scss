@@ -10,6 +10,7 @@
  * - Sets base font size, line height, and font weights.
  * - Establishes a spacing system with a base unit and scale.
  * - Defines content width and padding values.
+ * - Defines a specific max-width for header content.
  * - Specifies border-radius for interactive elements.
  *
  * @dependencies
@@ -90,6 +91,7 @@ $spacing-xxl: $spacing-base-unit * 8; // 64px
 $spacing-xxxl: $spacing-base-unit * 12; // 96px
 
 $content-max-width: 740px;
+$header-content-max-width: 1140px; // Max width for header's inner content alignment
 $content-padding-mobile: $spacing-sm; // 16px
 $content-padding-desktop: $spacing-md; // 24px
 

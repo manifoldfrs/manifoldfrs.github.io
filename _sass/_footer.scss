@@ -8,7 +8,7 @@
  * Key features:
  * - Styles the main footer container (`.site-footer`).
  * - Styles social media links (`.social-links`) for consistent appearance.
- * - Styles the copyright notice (`.copyright`).
+ * - Styles the copyright notice (`.copyright`) ensuring it is centered.
  * - Ensures proper spacing and alignment within the footer.
  *
  * @dependencies
@@ -25,54 +25,54 @@
 
 .site-footer {
   margin-top: $spacing-xxl; // Ample space above the footer
-  padding: $spacing-lg 0; // Vertical padding within the footer
+  padding: $spacing-lg 0 $spacing-sm 0; // Vertical padding, slightly less at the very bottom
   border-top: 1px solid $nord3; // Subtle top border to separate from content
   background-color: $color-primary-background; // Consistent background
   color: $nord4; // Slightly lighter text color for footer content for subtlety
   font-size: 0.9rem; // Slightly smaller font size for footer text
 
   .container {
-    // The .container class from _layout.scss is used here
-    text-align: center; // Center align footer content by default
+    // The .container class from _layout.scss is used here if not overridden by header-specific one
+    // For footer, we want standard container behavior
+    width: 100%;
+    max-width: $content-max-width; // Use standard content max-width for footer
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $content-padding-mobile;
+    padding-right: $content-padding-mobile;
+
+    @media (min-width: ($content-max-width + $content-padding-desktop * 2)) {
+      padding-left: $content-padding-desktop;
+      padding-right: $content-padding-desktop;
+    }
+    text-align: center; // Center align all direct inline/inline-block children text
   }
 }
 
 // -----------------------------------------------------------------------------
-// Social Media Links (if directly in footer, not just from _includes/social-links.html)
+// Social Media Links
 // -----------------------------------------------------------------------------
-// Styles for the wrapper if .social-links is used directly in footer.html
-// The _social-links.html include itself has a .social-links class.
-// These styles will apply to the ones in _includes/social-links.html.
 
 .social-links {
-  // Styles for the container of social links, typically within _includes/social-links.html
-  // but can also be used if social links are directly in footer.
   display: flex;
-  flex-wrap: wrap; // Allow links to wrap on smaller screens
-  justify-content: center; // Center the links
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  gap: $spacing-sm; // Space between social links
-  margin-bottom: $spacing-md; // Space below the social links block
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md; // Space below social links, before copyright
 
   a {
-    color: $nord4; // Use the footer's text color for consistency
+    color: $nord4;
     text-decoration: none;
-    border-bottom: none; // No underline for social links
-    opacity: 0.8; // Slightly transparent for subtlety
+    border-bottom: none;
+    opacity: 0.8;
     transition: opacity $transition-base, color $transition-base;
 
     &:hover,
     &:focus {
-      opacity: 1; // Full opacity on hover
-      color: $nord8; // Primary Accent: Nord Frost Blue on hover
+      opacity: 1;
+      color: $nord8;
     }
-
-    // If using icons, you'd style them here, e.g., svg fill or font color
-    // svg {
-    //   width: 20px;
-    //   height: 20px;
-    //   fill: currentColor; // Icon color inherits from link color
-    // }
   }
 }
 
@@ -81,12 +81,15 @@
 // -----------------------------------------------------------------------------
 
 .copyright {
-  font-size: 0.85rem; // Even smaller for copyright, very subtle
-  opacity: 0.7; // More transparency for copyright text
-  margin-top: $spacing-md; // Ensure some space if social links are not present or above it
+  font-size: 0.85rem;
+  opacity: 0.7;
+  width: 100%; // Ensure it takes full width of its parent for text-align to work as expected
+  padding-top: $spacing-sm; // Space above copyright if social links are present.
+  padding-bottom: $spacing-xs; // Small padding at the very bottom to avoid clipping
+
+  // text-align: center; is inherited from .site-footer .container
 
   a {
-    // Style for any links within the copyright, if any
     color: $nord4;
     text-decoration: underline;
     border-bottom: none;
@@ -105,11 +108,17 @@
 
 @media (max-width: 768px) {
   .site-footer {
-    margin-top: $spacing-xl; // Reduce top margin on smaller screens
-    padding: $spacing-md 0; // Reduce padding on smaller screens
+    margin-top: $spacing-xl;
+    padding-top: $spacing-md; // Adjust padding for smaller screens
+    padding-bottom: $spacing-xs;
   }
 
   .social-links {
-    gap: $spacing-xs; // Reduce gap between social links on smaller screens
+    gap: $spacing-xs;
+    margin-bottom: $spacing-sm;
+  }
+
+  .copyright {
+    padding-top: $spacing-xs;
   }
 }

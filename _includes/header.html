@@ -1,8 +1,13 @@
 <header class="site-header">
-  <div class="container">
+  <div class="site-header-content">
     <div class="site-title">
+      {% if site.author.avatar %}
+      <img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="{{ site.author.name | default: 'Author' }} avatar" class="header-avatar">
+      {% endif %}
       <a href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a>
     </div>
-    {% include navigation.html %}
+    <div class="header-nav-area">
+      {% include navigation.html %}
+    </div>
   </div>
 </header>

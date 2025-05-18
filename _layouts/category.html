@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+{% comment %} /** * @description * This layout defines the structure for individual category pages. * It displays a list of all posts belonging to the specific category. * * Key features: * - Displays the category name as the page title. * - Lists all posts associated with the current category. * - Uses the `post-card.html` include to render each post item. * * @input * - page.title: The name of the category, used as the page title. * - page.category: The category slug (used internally by Jekyll to group posts). * - site.categories: Jekyll's global object containing all categories and their posts. * * @dependencies * - `_includes/post-card.html`: For rendering individual post previews. * - `_layouts/default.html`: Base layout extended by this file. * - Styles from `_sass/_categories.scss` and `_sass/_blog.scss` (for post-card). * * @notes * - This layout is typically assigned to dynamically generated category pages or a page * that programmatically handles displaying posts for a given
+category. * - For Jekyll, actual category pages are often handled via plugins or specific page generation logic * if not using a collection-based approach for categories. This template assumes a page * will be generated for each category, or it's used in a way that `page.category` (or similar) * is populated with the target category name/slug. * Given the plan, this will likely be used by a collection of category pages or a plugin. * For a simple setup without plugins, we might need a different approach, but sticking to plan for now. * The standard way to do this without plugins is to have a `category_name.md` file in a `categories` folder or similar, * which uses this layout. Or, more simply, have a single "categories" page that lists all categories, and then * clicking a category filters posts on the client side or links to a page that lists posts of that category. * * Revisiting: Jekyll creates `site.categories[category_name]` which is a list of posts. * The `page.title` will be the
+category name if we create individual files per category. * Or, if we are on a single "Categories" page that then links to URLs like `/categories/my-category/`, * this layout would be used for those individual category archive pages. */ {% endcomment %}
+
+<div class="category-page container">
+  <header class="page-header">
+    <h1 class="page-title">Category: {{ page.title }}</h1>
+    <p class="page-subtitle">Posts categorized under "<strong>{{ page.title }}</strong>".</p>
+  </header>
+
+  <div class="post-list">
+    {% assign category_slug = page.title | slugify %} {% assign posts_in_category = site.categories[category_slug] %} {% if posts_in_category.size > 0 %} {% for post in posts_in_category %} {% include post-card.html post=post %} {% endfor %} {% else %}
+    <p>No posts found in this category.</p>
+    {% endif %}
+  </div>
+
+  <p class="back-to-categories">
+    <a href="{{ '/categories/' | prepend: site.baseurl }}">&laquo; Back to all categories</a>
+  </p>
+</div>

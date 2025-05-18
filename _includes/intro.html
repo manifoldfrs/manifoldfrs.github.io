@@ -1,25 +1,4 @@
 {% comment %} /** * @description * This component displays a brief introduction or bio section, typically for the homepage. * It includes an avatar image and a short textual introduction. * * Key features: * - Displays an avatar image. * - Shows a brief bio or welcome message from site.author in _config.yml. * * @dependencies * - Site configuration (`site.author.name`, `site.author.bio`, `site.author.avatar`) in `_config.yml`. * - Styles from `_sass/_home.scss` for `.intro-section`, `.avatar`, `.bio`. * * @notes * - Ensure `site.author` details are correctly configured in `_config.yml`. * - The avatar image path should be relative to the `assets/images/` directory. */ {% endcomment %}
 <section class="intro-section">
-  <div class="intro-content">
-    {% if site.author.avatar %}
-    <div class="avatar-container">
-      <img
-        src="{{ site.author.avatar | prepend: site.baseurl }}"
-        alt="{{ site.author.name }} avatar"
-        class="avatar"
-      />
-    </div>
-    {% endif %}
-    <div class="bio">
-      <h1>{{ site.author.name | default: "Your Name" }}</h1>
-      <p>{{ site.author.bio | default: "" | markdownify }}</p>
-      {% comment %} You can add more links or calls to action here if desired {% endcomment %} {% comment %} Example:
-      <a
-        href="{{ '/about/' | prepend: site.baseurl }}"
-        class="btn"
-        >Learn More About Me</a
-      >
-      {% endcomment %}
-    </div>
-  </div>
+  <div class="intro-content">{% comment %} Content previously here (avatar, author name, bio) has been removed or relocated. This section can be repurposed or removed from the homepage template if no longer needed. For example, you could add a welcome message or a call to action here. {% endcomment %}</div>
 </section>

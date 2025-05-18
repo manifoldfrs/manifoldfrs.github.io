@@ -1,63 +1,105 @@
 /**
  * @description
  * This file defines the SCSS styles for the site header component.
- * It includes styling for the site title/logo and the container for the main navigation.
- * The header is designed to be responsive, adapting its layout for smaller screens.
+ * It includes styling for the site title/logo (now with an avatar) and the container
+ * for the main navigation. The header is designed to be responsive.
  *
  * Key features:
- * - Styles the main header container (`.site-header`).
- * - Styles the site title (`.site-title`) for branding.
- * - Ensures proper alignment and spacing of header elements.
- * - Implements responsive behavior for mobile devices (e.g., stacking elements).
+ * - Styles the main header container (`.site-header`) as a full-width bar.
+ * - Styles an inner wrapper (`.site-header-content`) with a max-width for content alignment.
+ * - Positions site title (with avatar) to the left and navigation area to the right.
+ * - Implements responsive behavior for mobile devices (stacking and centering).
  *
  * @dependencies
- * - `_sass/_variables.scss`: For Nord theme colors, typography, and spacing units.
+ * - `_sass/_variables.scss`: For Nord theme colors, typography, spacing units, and $header-content-max-width.
  * - `_sass/_navigation.scss`: Relies on navigation styles for the embedded navigation.
  *
  * @notes
  * - The actual navigation links are styled in `_navigation.scss`.
- * - Responsive behavior might involve JavaScript for more complex interactions like a hamburger menu.
  */
 
 // -----------------------------------------------------------------------------
-// Site Header Container
+// Site Header Container (Full-width bar)
 // -----------------------------------------------------------------------------
 
 .site-header {
   padding-top: $spacing-lg;
   padding-bottom: $spacing-lg;
-  // background-color: $nord1; // Optional: Slightly different background for header
-  // border-bottom: 1px solid $nord3; // Optional: Subtle border at the bottom of header
+  // background-color: $nord1; // Optional: Background for the header bar
+  // border-bottom: 1px solid $nord3; // Optional: Subtle border
 
-  .container {
-    // The .container class from _layout.scss is used here
+  // Inner content wrapper for alignment
+  .site-header-content {
+    max-width: $header-content-max-width; // Use the new variable for header content width
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $content-padding-mobile; // Side padding
+    padding-right: $content-padding-mobile;
+
+    @media (min-width: 769px) {
+      // Apply desktop padding when wider than mobile breakpoint
+      padding-left: $content-padding-desktop;
+      padding-right: $content-padding-desktop;
+    }
+
     display: flex;
-    justify-content: space-between; // Pushes title to left, nav to right
+    justify-content: space-between; // Pushes site-title to left, header-nav-area to right
     align-items: center;
-    flex-wrap: wrap; // Allow wrapping for responsiveness
+    // flex-wrap: nowrap; // Ensure title and nav area try to stay on one line on desktop
   }
 }
 
 // -----------------------------------------------------------------------------
-// Site Title / Logo
+// Site Title / Logo (with Avatar)
 // -----------------------------------------------------------------------------
 
 .site-title {
-  font-size: 1.8rem; // Prominent size for site title
+  // Child of .site-header-content
+  display: flex; // To align avatar and title text side-by-side
+  align-items: center; // Vertically center avatar and title text
+  font-size: 1.8rem;
   font-weight: $font-weight-bold;
-  line-height: 1; // Ensure title doesn't take too much vertical space
-  margin: 0; // Remove default margins from h1/p if used for site title
+  line-height: 1;
+  margin: 0;
+  flex-shrink: 0;
+
+  .header-avatar {
+    width: 40px; // Size of the avatar in the header
+    height: 40px;
+    border-radius: 50%; // Circular avatar
+    margin-right: $spacing-sm; // Space between avatar and title text (16px)
+    object-fit: cover; // Ensure image covers the area without distortion
+    border: 2px solid $nord8; // Optional: subtle border matching accent
+  }
 
   a {
-    color: $nord6; // Text Color: Nord Snow Storm
+    // Site title link
+    color: $nord6;
     text-decoration: none;
-    border-bottom: none; // No underline for site title link
+    border-bottom: none;
     transition: color $transition-base;
 
     &:hover,
     &:focus {
-      color: $nord8; // Primary Accent: Nord Frost Blue on hover
+      color: $nord8;
     }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Header Navigation Area (groups main nav)
+// -----------------------------------------------------------------------------
+
+.header-nav-area {
+  // Child of .site-header-content
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; // Allow nav items within .site-nav to wrap if needed
+  justify-content: flex-end; // Align .site-nav to the right if it wraps
+
+  .site-nav {
+    // Styles for .site-nav itself come from _navigation.scss
+    // It should arrange its 'a' tags horizontally.
   }
 }
 
@@ -66,28 +108,53 @@
 // -----------------------------------------------------------------------------
 
 @media (max-width: 768px) {
-  // Targeting tablets and smaller devices
   .site-header {
     padding-top: $spacing-md;
     padding-bottom: $spacing-md;
 
-    .container {
-      flex-direction: column; // Stack title and navigation vertically
+    .site-header-content {
+      flex-direction: column; // Stack title and navigation area vertically
       align-items: center; // Center-align items when stacked
+      gap: $spacing-md; // Add gap between title and nav area when stacked
+      max-width: 100%; // Ensure it doesn't exceed viewport on mobile
     }
+  }
 
-    .site-title {
-      margin-bottom: $spacing-md; // Add space below title when stacked above navigation
-      text-align: center; // Center title text
-      font-size: 1.6rem; // Slightly smaller title on mobile
+  .site-title {
+    text-align: center;
+    font-size: 1.6rem;
+    flex-direction: column; // Stack avatar and title text vertically on mobile
+    align-items: center; // Center them within the .site-title block
+
+    .header-avatar {
+      margin-right: 0; // Remove right margin
+      margin-bottom: $spacing-xs; // Add bottom margin when stacked
+      width: 48px; // Slightly larger avatar on mobile if desired
+      height: 48px;
     }
-    // Navigation adjustments are handled in _navigation.scss for mobile
+  }
+
+  .header-nav-area {
+    justify-content: center;
+    width: 100%;
+
+    .site-nav {
+      justify-content: center;
+      width: 100%;
+    }
   }
 }
 
 @media (max-width: 480px) {
-  // Targeting smaller mobile devices
   .site-title {
-    font-size: 1.5rem; // Even smaller title for very small screens
+    font-size: 1.5rem;
+    .header-avatar {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .header-nav-area .site-nav a {
+    font-size: 0.9rem;
+    padding: ($spacing-xs / 2) ($spacing-xs / 2);
   }
 }
