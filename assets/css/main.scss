@@ -29,6 +29,7 @@
  * - `_sass/_footer.scss`: Defines styles for the site footer.
  * - `_sass/_navigation.scss`: Defines styles for navigation elements.
  * - `_sass/_home.scss`: Defines styles for the homepage.
+ * - `_sass/_pages.scss`: Defines styles for static pages.
  * - (Future partials for components, pages, etc.)
  *
  * @notes
@@ -70,6 +71,7 @@
 // 7. Pages
 // Import specific styles for individual pages or page types.
 @import "home"; // Styles for the homepage (Step 8)
+@import "pages"; // Styles for static pages like About (Step 9)
 // Example:
 // @import "pages/blog"; // Will be created in Step 10
 // @import "pages/post"; // Will be created in Step 11

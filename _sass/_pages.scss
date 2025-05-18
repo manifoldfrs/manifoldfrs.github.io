@@ -1,0 +1,88 @@
+/**
+ * @description
+ * This file contains SCSS styles specific to generic static pages (e.g., About, Contact, Archive).
+ * It ensures that these pages maintain a consistent look and feel with the rest of the site,
+ * primarily focusing on the content presentation within the standard page layout.
+ *
+ * Key features:
+ * - Basic styling for the main content area of static pages.
+ * - Ensures typography and spacing are consistent with the design system.
+ * - Provides a clean and readable layout for text-heavy static pages.
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: For Nord theme colors, typography settings, and spacing units.
+ * - `_sass/_layout.scss`: For the overall page structure and `.container` class.
+ *
+ * @notes
+ * - These styles are applied to elements within layouts like `_layouts/page.html`.
+ * - Specific static pages might have additional unique styling requirements that could be
+ *   added here or in more specific partials if complexity grows.
+ */
+
+// -----------------------------------------------------------------------------
+// General Static Page Styles
+// -----------------------------------------------------------------------------
+
+// Styles for the <article class="page"> element defined in _layouts/page.html
+.page {
+  // The .page-header and .page-title are styled in _layout.scss
+  // The .page-content is also generally styled in _layout.scss
+
+  // Add specific styles for .page if needed, for example, if all static pages
+  // should have a slightly different background or overall padding.
+  // For now, we rely on the styles from _layout.scss.
+}
+
+// -----------------------------------------------------------------------------
+// About Page Specifics (Example)
+// -----------------------------------------------------------------------------
+// If the About page (_pages/about.md) has unique structural elements or
+// classes, they can be styled here. For a simple content page,
+// the styles in _layout.scss for .page-content should suffice.
+
+.page-content {
+  // General styling for content within static pages.
+  // This ensures that elements like paragraphs, lists, and blockquotes
+  // within the main content area of a static page are well-formatted.
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    // Headings within the page content
+    // Styles inherited from _typography.scss and _layout.scss
+    // Adjust if static page content headings need different treatment.
+    // For example, more spacing or a different style.
+  }
+
+  p {
+    // Paragraphs within the page content
+    // Styles inherited from _typography.scss and _layout.scss
+    font-size: 1.05rem; // Slightly larger for readability on content-heavy pages
+    line-height: $line-height-base * 1.05;
+  }
+
+  a {
+    // Links within the page content
+    // Styles inherited from _typography.scss
+    // For example, if links in static page content should be more prominent:
+    // font-weight: $font-weight-medium;
+  }
+
+  // Example: Styling for a specific element that might appear in about.md
+  // .about-highlight {
+  //   background-color: $nord1;
+  //   padding: $spacing-md;
+  //   border-left: 3px solid $nord8; // Primary accent
+  //   margin: $spacing-lg 0;
+  //   border-radius: $border-radius-base;
+  // }
+}
+
+// If other static pages like an Archive or Categories page are created
+// and have specific structural elements, their styles can be added here too.
+// For example:
+// .archive-list { ... }
+// .category-index { ... }
