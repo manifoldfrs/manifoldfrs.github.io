@@ -12,14 +12,18 @@
  * Key structure:
  * 1. Variables: Global SCSS variables (colors, fonts, spacing).
  * 2. Base: Reset/normalize styles and base HTML element styling.
- * 3. Layouts: Styles for major layout components (header, footer, grid).
- * 4. Components: Styles for reusable UI components (buttons, cards, navigation).
- * 5. Pages: Specific styles for individual pages or page types.
- * 6. Utilities: Utility classes for common styling needs.
+ * 3. Typography: Styles for text elements, headings, links, etc.
+ * 4. Code: Styles for inline code and code blocks.
+ * 5. Layouts: Styles for major layout components (header, footer, grid).
+ * 6. Components: Styles for reusable UI components (buttons, cards, navigation).
+ * 7. Pages: Specific styles for individual pages or page types.
+ * 8. Utilities: Utility classes for common styling needs.
  *
  * @dependencies
  * - `_sass/_variables.scss`: Defines global design tokens.
  * - `_sass/_base.scss`: Provides foundational HTML element styles.
+ * - `_sass/_typography.scss`: Defines typography styles.
+ * - `_sass/_code.scss`: Defines styles for code blocks.
  * - (Future partials for layouts, components, etc.)
  *
  * @notes
@@ -35,7 +39,15 @@
 // Import reset/normalize and base HTML element styles.
 @import "base";
 
-// 3. Layouts
+// 3. Typography Styles
+// Import styles for text elements like headings, paragraphs, links, lists etc.
+@import "typography";
+
+// 4. Code Styles
+// Import styles for inline code and preformatted code blocks.
+@import "code";
+
+// 5. Layouts
 // Import styles for major layout components (e.g., header, footer, grid system).
 // Example:
 // @import "layout/header";
@@ -43,20 +55,20 @@
 // @import "layout/grid";
 // @import "layout"; // Will be created in Step 7
 
-// 4. Components
+// 6. Components
 // Import styles for reusable UI components (e.g., buttons, cards, navigation).
 // Example:
 // @import "components/buttons";
 // @import "components/cards";
 // @import "components/navigation"; // Will be created in Step 7
 
-// 5. Pages
+// 7. Pages
 // Import specific styles for individual pages or page types.
 // Example:
 // @import "pages/home"; // Will be created in Step 8
 // @import "pages/about"; // Will be created in Step 9
 
-// 6. Utilities
+// 8. Utilities
 // Import utility classes (e.g., spacing helpers, visibility classes).
 // Example:
 // @import "utilities";
