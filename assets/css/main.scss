@@ -31,6 +31,7 @@
  * - `_sass/_home.scss`: Defines styles for the homepage.
  * - `_sass/_pages.scss`: Defines styles for static pages.
  * - `_sass/_blog.scss`: Defines styles for blog listing and post cards.
+ * - `_sass/_post.scss`: Defines styles for individual blog posts.
  * - `_sass/_pagination.scss`: Defines styles for pagination component.
  * - (Future partials for components, pages, etc.)
  *
@@ -75,8 +76,8 @@
 @import "home"; // Styles for the homepage (Step 8)
 @import "pages"; // Styles for static pages like About (Step 9)
 @import "blog"; // Styles for blog listing and post cards (Step 10)
+@import "post"; // Styles for individual blog posts (Step 11)
 // Example:
-// @import "pages/post"; // Will be created in Step 11
 // @import "pages/portfolio"; // Will be created in Step 13
 
 // 8. Utilities

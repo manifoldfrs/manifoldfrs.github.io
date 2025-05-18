@@ -1,0 +1,23 @@
+---
+layout: page
+title: Blog
+permalink: /blog/
+---
+
+{% comment %} The page header (
+<h1>{{ page.title }}</h1>
+) is now handled by the _layouts/page.html Removing it from here to avoid duplication.
+<div class="page-header">
+  <h1 class="page-title">{{ page.title }}</h1>
+</div>
+{% endcomment %}
+
+<div class="blog-index">
+  <div class="post-list">
+    {% for post in paginator.posts %} {% include post-card.html post=post %} {% else %}
+    <p>No posts found. Check if you have any posts in the _posts directory and that they are not dated in the future.</p>
+    {% endfor %}
+  </div>
+
+  {% include pagination.html %}
+</div>

@@ -1,0 +1,323 @@
+/**
+ * @description
+ * This file contains SCSS styles specific to individual blog post pages (`_layouts/post.html`).
+ * It styles the post's header, content area, footer (including tags and sharing options),
+ * and next/previous post navigation.
+ *
+ * Key features:
+ * - Styles for the main post article container (`.post`).
+ * - Styles for the post header (`.post-header`), including title and metadata.
+ * - Styles for the post content area (`.post-content`), ensuring readability and consistency.
+ * - Styles for the post footer (`.post-footer`), including tags and social sharing.
+ * - Styles for next/previous post navigation (`.post-navigation`).
+ * - Adherence to the Nord color scheme and design system typography/spacing.
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: For Nord theme colors, typography settings, and spacing units.
+ * - `_sass/_layout.scss`: For base layout and content container styles.
+ * - `_sass/_typography.scss`: For base text styling.
+ * - `_sass/_code.scss`: For code block styling.
+ *
+ * @notes
+ * - These styles are applied to elements within `_layouts/post.html` and its includes
+ *   like `_includes/post-header.html`, `_includes/post-footer.html`, and `_includes/post-navigation.html`.
+ */
+
+// -----------------------------------------------------------------------------
+// Post Article Container (`.post`)
+// -----------------------------------------------------------------------------
+
+.post {
+  // The .post-header and .post-title are styled primarily in _layout.scss
+  // and further refined in .post-header specific styles below.
+  // The .post-content is also generally styled in _layout.scss.
+  // This class provides a wrapper for any overarching post-specific layout.
+}
+
+// -----------------------------------------------------------------------------
+// Post Header (`.post-header`) - Specific refinements for post layout
+// -----------------------------------------------------------------------------
+// .post-header is already defined in _layout.scss with common styles.
+// We can add post-specific overrides or additions here.
+.post-header {
+  text-align: left; // Override potential centered alignment from _layout.scss for posts
+  border-bottom: 1px solid $nord3; // Ensure border consistency
+  padding-bottom: $spacing-lg; // More padding for post headers
+  margin-bottom: $spacing-xl; // More space after header before content
+
+  .post-title {
+    font-size: 2.8rem; // Larger title for posts
+    color: $nord8; // Primary accent for post titles
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+      text-align: center; // Center title on mobile
+    }
+  }
+
+  .post-meta {
+    font-size: 0.9rem;
+    color: $nord4; // Lighter text for meta
+    margin-top: $spacing-sm;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm; // Space between meta items
+    align-items: center;
+
+    @media (max-width: 768px) {
+      justify-content: center; // Center meta items on mobile
+      font-size: 0.85rem;
+    }
+
+    .post-categories a,
+    .reading-time {
+      color: $nord4;
+      text-decoration: none;
+    }
+
+    .post-categories a {
+      border-bottom: 1px dotted $nord4;
+      &:hover {
+        color: $nord14; // Secondary accent
+        border-bottom-color: $nord14;
+      }
+    }
+
+    .separator {
+      color: $nord3; // Subtle separator
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Post Content (`.post-content`)
+// -----------------------------------------------------------------------------
+// .post-content is already defined in _layout.scss with common styles.
+// Add post-specific content styling here.
+.post-content {
+  font-size: 1.1rem; // Slightly larger base font for post readability
+  line-height: 1.8;
+  color: $nord6; // Main text color
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: $spacing-xl * 1.5; // More space above headings in post content
+    margin-bottom: $spacing-md;
+    color: $nord5; // Slightly brighter headings within content
+    font-weight: $font-weight-bold;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote {
+    margin-bottom: $spacing-lg; // More generous spacing for paragraphs and lists
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: $spacing-lg auto; // Center images and add vertical space
+    border-radius: $border-radius-base;
+    border: 1px solid $nord3; // Subtle border for images
+    box-shadow: 0 4px 8px rgba($nord0, 0.1); // Soft shadow
+  }
+
+  figure {
+    margin: $spacing-lg 0;
+    img {
+      margin: 0 auto; // Remove figure's default margin for img if it's centered by figure
+    }
+    figcaption {
+      font-size: 0.9rem;
+      color: $nord4;
+      text-align: center;
+      margin-top: $spacing-xs;
+      font-style: italic;
+    }
+  }
+
+  // Ensure code blocks from _code.scss fit well
+  pre {
+    margin-left: -$content-padding-mobile; // Allow code blocks to span wider on mobile
+    margin-right: -$content-padding-mobile;
+    padding-left: $content-padding-mobile;
+    padding-right: $content-padding-mobile;
+    border-left: none;
+    border-right: none;
+    border-radius: 0; // Full width look for code blocks
+
+    @media (min-width: ($content-max-width + $content-padding-desktop * 2)) {
+      margin-left: 0; // Reset for desktop if container has padding
+      margin-right: 0;
+      padding-left: $spacing-md;
+      padding-right: $spacing-md;
+      border-left: 1px solid $nord3;
+      border-right: 1px solid $nord3;
+      border-radius: $border-radius-base;
+    }
+    @media (min-width: 768px) {
+      // A common breakpoint
+      margin-left: 0; // Reset for wider screens even if not full desktop padding
+      margin-right: 0;
+      border-radius: $border-radius-base;
+      border-left: 1px solid $nord3;
+      border-right: 1px solid $nord3;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Post Footer (`.post-footer`)
+// -----------------------------------------------------------------------------
+
+.post-footer {
+  margin-top: $spacing-xxl; // Ample space after content before footer elements
+  padding-top: $spacing-lg;
+  border-top: 1px solid $nord3; // Separator line
+
+  .post-tags {
+    margin-bottom: $spacing-lg;
+    h4 {
+      font-size: 1rem;
+      color: $nord5;
+      margin-bottom: $spacing-sm;
+      font-weight: $font-weight-medium;
+    }
+    .tag-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-xs;
+
+      .tag-item a {
+        display: inline-block;
+        padding: $spacing-xs/2 $spacing-sm;
+        background-color: $nord3;
+        color: $nord14; // Secondary accent for tags
+        border-radius: $border-radius-base;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: background-color $transition-base, color $transition-base;
+
+        &:hover {
+          background-color: $nord14;
+          color: $nord0;
+        }
+      }
+    }
+  }
+
+  .post-share {
+    // Styles for share section in _includes/post-footer.html
+    // and later refined by _share.scss (Step 15)
+    h4 {
+      font-size: 1rem;
+      color: $nord5;
+      margin-bottom: $spacing-sm;
+      font-weight: $font-weight-medium;
+    }
+    // Basic link styling until specific share buttons are implemented
+    a {
+      display: inline-block;
+      margin-right: $spacing-sm;
+      color: $nord10; // Link color
+      text-decoration: none;
+      padding: $spacing-xs/2 $spacing-xs;
+      border: 1px solid $nord10;
+      border-radius: $border-radius-base;
+
+      &:hover {
+        background-color: $nord10;
+        color: $nord6;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Post Navigation (`.post-navigation`)
+// -----------------------------------------------------------------------------
+
+.post-navigation {
+  margin-top: $spacing-xl;
+  padding-top: $spacing-lg;
+  border-top: 1px solid $nord3;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; // Allow wrapping on small screens
+
+  .nav-item {
+    flex-basis: calc(50% - #{$spacing-sm}); // Each item takes roughly half, minus gap
+    max-width: calc(50% - #{$spacing-sm});
+
+    a {
+      display: block;
+      padding: $spacing-sm;
+      background-color: $nord1;
+      border: 1px solid $nord3;
+      border-radius: $border-radius-base;
+      color: $nord6;
+      text-decoration: none;
+      transition: background-color $transition-base, border-color $transition-base;
+
+      &:hover {
+        background-color: $nord2;
+        border-color: $nord4;
+      }
+    }
+
+    .nav-label {
+      display: block;
+      font-size: 0.8rem;
+      color: $nord4;
+      margin-bottom: $spacing-xs / 2;
+    }
+
+    .nav-title {
+      font-weight: $font-weight-medium;
+      color: $nord8; // Primary accent for nav titles
+    }
+  }
+
+  .nav-prev {
+    text-align: left;
+  }
+
+  .nav-next {
+    text-align: right;
+  }
+
+  // Responsive adjustments for post navigation
+  @media (max-width: 768px) {
+    flex-direction: column; // Stack nav items vertically
+    gap: $spacing-md;
+
+    .nav-item {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    .nav-prev,
+    .nav-next {
+      text-align: center;
+    }
+  }
+}

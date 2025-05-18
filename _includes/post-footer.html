@@ -1,0 +1,46 @@
+{% comment %} /** * @description * This component renders the footer section for a blog post. * It typically includes post tags and social media sharing buttons. * * Key features: * - Displays a list of post tags (`page.tags`) if available. * - Includes social media sharing links (initial simple links, to be enhanced by _includes/share-buttons.html later). * * @input * - page: The Jekyll page object for the current post. * - site: The Jekyll site object for URLs and social media configurations. * * @dependencies * - Jekyll's `page` and `site` objects. * - Styles from `_sass/_post.scss` (specifically `.post-footer`, `.post-tags`, `.post-share`). * - Will later depend on `_includes/share-buttons.html` (Step 15). * * @notes * - This include should be used at the end of the `_layouts/post.html` layout, before post navigation. * - The `share` frontmatter variable controls the display of sharing buttons. */ {% endcomment %}
+<footer class="post-footer">
+  {% if page.tags.size > 0 %}
+  <div class="post-tags">
+    <h4>Tags</h4>
+    <ul class="tag-list">
+      {% for tag in page.tags %}
+      <li class="tag-item"><a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}">{{ tag | escape }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% if page.share %}
+  <div class="post-share">
+    <h4>Share this post</h4>
+    {% comment %} Placeholder for more advanced share buttons from Step 15 {% endcomment %}
+    <a
+      href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}&via={{ site.social.twitter | default: '' }}"
+      target="_blank"
+      rel="noopener"
+      aria-label="Share on Twitter"
+      >Twitter</a
+    >
+    <a
+      href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}&title={{ page.title | url_encode }}&summary={{ page.excerpt | strip_html | truncatewords: 20 | url_encode }}&source={{ site.title | url_encode }}"
+      target="_blank"
+      rel="noopener"
+      aria-label="Share on LinkedIn"
+      >LinkedIn</a
+    >
+    {% comment %} Add more share links as needed, e.g., Facebook, Email {% endcomment %} {% comment %}
+    <a
+      href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}"
+      target="_blank"
+      rel="noopener"
+      aria-label="Share on Facebook"
+      >Facebook</a
+    >
+    <a
+      href="mailto:?subject={{ page.title | url_encode }}&body={{ page.excerpt | strip_html | truncatewords: 30 | url_encode }}%0A%0ARead more at: {{ page.url | absolute_url | url_encode }}"
+      aria-label="Share via Email"
+      >Email</a
+    >
+    {% endcomment %}
+  </div>
+  {% endif %}
+</footer>
