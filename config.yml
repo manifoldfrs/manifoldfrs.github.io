@@ -1,0 +1,93 @@
+author: Faris Habib
+  name: Faris Habib
+    location: Nomad
+  avatar: /assets/images/avatar.jpg
+description: The Esoteric Garden
+url: https://frshbb.github.io/
+enforce_ssl: https://frshbb.github.io/
+lang: en
+timezone: UTC
+
+
+social:
+  github: manifoldfrs
+  twitter: frshbb
+  linkedin: farishabib
+  instagram: frs_hbb
+  substack: frshbb
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
+  pages:
+    output: true
+    permalink: /:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: false
+      share: true
+  - scope:
+      path: ""
+      type: "portfolio"
+    values:
+      layout: "portfolio"
+      share: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - LICENSE
+  - README.md
+  - prompts
+
+# Nord theme color scheme
+nord_colors:
+  dark_bg: "#2E3440"
+  darker_bg: "#3B4252"
+  text: "#ECEFF4"
+  primary: "#88C0D0"
+  secondary: "#A3BE8C"
+  tertiary: "#EBCB8B"
+  alert: "#BF616A"
+  links: "#5E81AC"

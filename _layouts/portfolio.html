@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<article class="portfolio-item">
+  <header class="portfolio-header">
+    <h1 class="portfolio-title">{{ page.title }}</h1>
+    <p class="portfolio-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}"> {{ page.date | date: "%b %-d, %Y" }} </time>
+      {% if page.categories.size > 0 %}
+      <span class="portfolio-categories">
+        in {% for category in page.categories %}
+        <a href="{{ site.baseurl }}/portfolio/categories/#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %} {% endfor %}
+      </span>
+      {% endif %}
+    </p>
+  </header>
+
+  {% if page.featured_image %}
+  <div class="portfolio-featured-image">
+    <img
+      src="{{ page.featured_image | prepend: site.baseurl }}"
+      alt="{{ page.title }}"
+    />
+  </div>
+  {% endif %}
+
+  <div class="portfolio-content">{{ content }}</div>
+
+  {% if page.technologies.size > 0 %}
+  <div class="portfolio-technologies">
+    <h3>Technologies Used</h3>
+    <ul>
+      {% for tech in page.technologies %}
+      <li>{{ tech }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} {% if page.share %}
+  <div class="portfolio-share">
+    <h4>Share this project</h4>
+    <a
+      href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+      target="_blank"
+      rel="noopener"
+      >Twitter</a
+    >
+    <a
+      href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title | url_encode }}"
+      target="_blank"
+      rel="noopener"
+      >LinkedIn</a
+    >
+  </div>
+  {% endif %}
+</article>

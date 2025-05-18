@@ -1,0 +1,74 @@
+<!-- Basic meta tags -->
+<meta charset="utf-8" />
+<meta
+  http-equiv="X-UA-Compatible"
+  content="IE=edge"
+/>
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+/>
+
+<!-- SEO meta tags -->
+<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta
+  name="description"
+  content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+/>
+
+<!-- Open Graph / Facebook -->
+<meta
+  property="og:type"
+  content="{% if page.title %}article{% else %}website{% endif %}"
+/>
+<meta
+  property="og:url"
+  content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+/>
+<meta
+  property="og:title"
+  content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"
+/>
+<meta
+  property="og:description"
+  content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+/>
+{% if page.featured_image %}
+<meta
+  property="og:image"
+  content="{{ page.featured_image | prepend: site.baseurl | prepend: site.url }}"
+/>
+{% endif %}
+
+<!-- Twitter -->
+<meta
+  name="twitter:card"
+  content="summary_large_image"
+/>
+<meta
+  name="twitter:url"
+  content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+/>
+<meta
+  name="twitter:title"
+  content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"
+/>
+<meta
+  name="twitter:description"
+  content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"
+/>
+{% if page.featured_image %}
+<meta
+  name="twitter:image"
+  content="{{ page.featured_image | prepend: site.baseurl | prepend: site.url }}"
+/>
+{% endif %}
+
+<!-- Canonical link -->
+<link
+  rel="canonical"
+  href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+/>
+
+<!-- RSS feed -->
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">

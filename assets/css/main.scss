@@ -1,0 +1,175 @@
+---
+---
+
+// Nord theme colors
+$dark-bg: #2e3440;
+$darker-bg: #3b4252;
+$text: #eceff4;
+$primary: #88c0d0;
+$secondary: #a3be8c;
+$tertiary: #ebcb8b;
+$alert: #bf616a;
+$links: #5e81ac;
+
+// Base
+body {
+  font-family: -system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: $dark-bg;
+  color: $text;
+  line-height: 1.7;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+a {
+  color: $links;
+  text-decoration: none;
+  border-bottom: 1px solid transparentize($links, 0.7);
+
+  &:hover {
+    color: lighten($links, 10%);
+    border-bottom: 1px solid $links;
+  }
+}
+
+// Header
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+
+  .site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    a {
+      color: $text;
+      border-bottom: none;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  .site-nav {
+    a {
+      margin-left: 1.5rem;
+      color: $text;
+      border-bottom: none;
+
+      &:hover {
+        color: $primary;
+        border-bottom: 1px solid $primary;
+      }
+    }
+  }
+}
+
+// Footer
+.site-footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid $darker-bg;
+
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    a {
+      color: $text;
+      opacity: 0.8;
+      border-bottom: none;
+
+      &:hover {
+        opacity: 1;
+        color: $primary;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+}
+
+// Home
+.home {
+  .intro {
+    margin: 3rem 0;
+  }
+
+  .recent-posts {
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    .post-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $darker-bg;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      .post-date {
+        display: block;
+        font-size: 0.9rem;
+        color: $text;
+        opacity: 0.7;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .site-nav {
+      margin-top: 1rem;
+
+      a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+    }
+  }
+}
