@@ -1,110 +1,139 @@
 ---
+# Front matter dashes are required for Jekyll to process SCSS files.
+# Do not remove them.
 ---
 
-// Nord theme colors
-$dark-bg: #2e3440;
-$darker-bg: #3b4252;
-$text: #eceff4;
-$primary: #88c0d0;
-$secondary: #a3be8c;
-$tertiary: #ebcb8b;
-$alert: #bf616a;
-$links: #5e81ac;
+/**
+ * @description
+ * This is the main SCSS file for the website. It imports all other SCSS partials,
+ * including variables, base styles, layout styles, component styles, and page-specific styles.
+ * The order of imports is crucial for the correct application of styles due to the cascading nature of CSS.
+ *
+ * Key structure:
+ * 1. Variables: Global SCSS variables (colors, fonts, spacing).
+ * 2. Base: Reset/normalize styles and base HTML element styling.
+ * 3. Layouts: Styles for major layout components (header, footer, grid).
+ * 4. Components: Styles for reusable UI components (buttons, cards, navigation).
+ * 5. Pages: Specific styles for individual pages or page types.
+ * 6. Utilities: Utility classes for common styling needs.
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: Defines global design tokens.
+ * - `_sass/_base.scss`: Provides foundational HTML element styles.
+ * - (Future partials for layouts, components, etc.)
+ *
+ * @notes
+ * - Ensure new SCSS partials are imported in the correct section to maintain the cascade.
+ * - This file itself should contain minimal direct styling; its primary role is to orchestrate imports.
+ */
 
-// Base
-body {
-  font-family: -system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: $dark-bg;
-  color: $text;
-  line-height: 1.7;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-}
+// 1. Variables
+// Import global SCSS variables (colors, typography, spacing, etc.)
+@import "variables";
 
-.container {
-  max-width: 740px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
+// 2. Base Styles
+// Import reset/normalize and base HTML element styles.
+@import "base";
 
-// Typography
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  line-height: 1.3;
-}
+// 3. Layouts
+// Import styles for major layout components (e.g., header, footer, grid system).
+// Example:
+// @import "layout/header";
+// @import "layout/footer";
+// @import "layout/grid";
+// @import "layout"; // Will be created in Step 7
 
-a {
-  color: $links;
-  text-decoration: none;
-  border-bottom: 1px solid transparentize($links, 0.7);
+// 4. Components
+// Import styles for reusable UI components (e.g., buttons, cards, navigation).
+// Example:
+// @import "components/buttons";
+// @import "components/cards";
+// @import "components/navigation"; // Will be created in Step 7
 
-  &:hover {
-    color: lighten($links, 10%);
-    border-bottom: 1px solid $links;
-  }
-}
+// 5. Pages
+// Import specific styles for individual pages or page types.
+// Example:
+// @import "pages/home"; // Will be created in Step 8
+// @import "pages/about"; // Will be created in Step 9
 
-// Header
+// 6. Utilities
+// Import utility classes (e.g., spacing helpers, visibility classes).
+// Example:
+// @import "utilities";
+
+// Styles from the old main.scss (to be refactored or integrated into new partials)
+// For now, I'm keeping them here, but they should be moved into their respective
+// partials (_layout.scss, _header.scss, _footer.scss, _navigation.scss, _home.scss etc.)
+// as per the implementation plan.
+
+// Header (Should go into _sass/_header.scss - Step 7)
 .site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 0;
+  padding: $spacing-lg 0; // Vertical padding for the entire header area
+
+  .container {
+    // This is the direct parent of site-title and site-nav
+    display: flex;
+    justify-content: space-between; // Pushes title to left, nav to right
+    align-items: center;
+  }
 
   .site-title {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: $font-weight-bold;
 
     a {
-      color: $text;
+      color: $color-text;
       border-bottom: none;
 
       &:hover {
-        color: $primary;
+        color: $color-primary-accent;
       }
     }
   }
 
+  // Navigation specific styles should go into _sass/_navigation.scss (Step 7)
   .site-nav {
     a {
-      margin-left: 1.5rem;
-      color: $text;
+      margin-left: $spacing-md; // Spacing between nav items
+      color: $color-text;
       border-bottom: none;
+      padding-bottom: $spacing-xs / 2;
 
       &:hover {
-        color: $primary;
-        border-bottom: 1px solid $primary;
+        color: $color-primary-accent;
+        border-bottom: 2px solid $color-primary-accent;
+      }
+      &.active {
+        color: $color-primary-accent;
+        border-bottom: 2px solid $color-primary-accent;
+        font-weight: $font-weight-medium;
       }
     }
   }
 }
 
-// Footer
+// Footer (Should go into _sass/_footer.scss - Step 7)
 .site-footer {
-  margin-top: 4rem;
-  padding: 2rem 0;
-  border-top: 1px solid $darker-bg;
+  margin-top: $spacing-xxl;
+  padding: $spacing-lg 0;
+  border-top: 1px solid $border-color;
 
   .social-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+    justify-content: center;
 
     a {
-      color: $text;
+      color: $color-text;
       opacity: 0.8;
       border-bottom: none;
+      transition: $transition-base;
 
       &:hover {
         opacity: 1;
-        color: $primary;
+        color: $color-primary-accent;
       }
     }
   }
@@ -112,18 +141,32 @@ a {
   .copyright {
     font-size: 0.9rem;
     opacity: 0.7;
+    text-align: center;
   }
 }
 
-// Home
+// Home Page Specific Styles (Should go into _sass/_home.scss - Step 8)
 .home {
   .intro {
-    margin: 3rem 0;
+    margin: $spacing-xl 0;
+    text-align: center;
+    font-size: 1.2rem;
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: $spacing-sm;
+    }
+    p {
+      font-size: 1.1rem;
+      color: $nord4;
+    }
   }
 
   .recent-posts {
     h2 {
-      margin-bottom: 2rem;
+      margin-bottom: $spacing-lg;
+      text-align: center;
+      font-size: 1.8rem;
     }
 
     .post-list {
@@ -132,44 +175,239 @@ a {
       margin: 0;
 
       li {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid $darker-bg;
+        margin-bottom: $spacing-xl;
+        padding-bottom: $spacing-xl;
+        border-bottom: 1px solid $border-color;
 
         &:last-child {
           border-bottom: none;
+          margin-bottom: 0;
+          padding-bottom: 0;
         }
       }
 
       h3 {
         margin-top: 0;
-        margin-bottom: 0.5rem;
+        margin-bottom: $spacing-xs;
+        font-size: 1.5rem;
+        a {
+          border-bottom: none;
+          &:hover {
+            color: $color-primary-accent;
+          }
+        }
       }
 
       .post-date {
         display: block;
         font-size: 0.9rem;
-        color: $text;
-        opacity: 0.7;
-        margin-bottom: 1rem;
+        color: $nord4;
+        opacity: 0.8;
+        margin-bottom: $spacing-sm;
+      }
+      p {
+        color: $nord5;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      + a {
+        display: block;
+        text-align: center;
+        margin-top: $spacing-lg;
+        font-weight: $font-weight-medium;
+        padding: $spacing-xs $spacing-sm;
+        border: 1px solid $color-links;
+        border-radius: $border-radius-base;
+        &:hover {
+          background-color: $color-links;
+          color: $color-primary-background;
+          border-color: $color-links;
+        }
       }
     }
   }
 }
 
-// Media queries
-@media (max-width: 768px) {
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
+// Page Specific Styles (Should go into _sass/_pages.scss or _sass/_page.scss - Step 9)
+.page-header,
+.post-header,
+.portfolio-header {
+  margin-bottom: $spacing-lg;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: $spacing-md;
 
-    .site-nav {
-      margin-top: 1rem;
+  .page-title,
+  .post-title,
+  .portfolio-title {
+    margin-top: 0;
+    margin-bottom: $spacing-xs;
+  }
 
-      a {
-        margin-left: 0;
-        margin-right: 1rem;
+  .post-meta,
+  .portfolio-meta {
+    font-size: 0.9rem;
+    color: $nord4;
+    opacity: 0.8;
+    a {
+      color: $nord4;
+      border-bottom: 1px dotted $nord4;
+      &:hover {
+        color: $nord8;
+        border-bottom-color: $nord8;
       }
     }
+  }
+}
+
+// Post Content (Should go into _sass/_post.scss - Step 11)
+.post-content,
+.page-content,
+.portfolio-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: $spacing-xl;
+  }
+}
+
+// Blog index and Portfolio index specific (Should go into _sass/_blog.scss & _sass/_portfolio.scss - Steps 10 & 13)
+.blog-posts .post-item,
+.portfolio-items .portfolio-item {
+  margin-bottom: $spacing-xl;
+  padding-bottom: $spacing-xl;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .post-title a,
+  .portfolio-title a {
+    border-bottom: none;
+    &:hover {
+      color: $color-primary-accent;
+    }
+  }
+  .post-meta,
+  .portfolio-meta {
+    font-size: 0.9rem;
+    color: $nord4;
+    margin-bottom: $spacing-sm;
+  }
+  .post-excerpt,
+  .portfolio-excerpt {
+    margin-bottom: $spacing-sm;
+  }
+  .read-more {
+    font-weight: $font-weight-medium;
+    display: inline-block;
+    padding: $spacing-xs/2 $spacing-sm;
+    border: 1px solid $color-links;
+    border-radius: $border-radius-base;
+    &:hover {
+      background-color: $color-links;
+      color: $color-primary-background;
+      border-color: $color-links;
+    }
+  }
+}
+
+// Portfolio specific adjustments (Should go into _sass/_portfolio.scss or _sass/_portfolio-item.scss - Steps 13 & 14)
+.portfolio-image,
+.portfolio-featured-image {
+  margin-bottom: $spacing-md;
+  img {
+    border-radius: $border-radius-base;
+    border: 1px solid $border-color;
+  }
+}
+
+.portfolio-technologies {
+  margin-top: $spacing-lg;
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: $spacing-sm;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    li {
+      background-color: $nord1;
+      padding: $spacing-xs/2 $spacing-xs;
+      border-radius: $border-radius-base;
+      font-size: 0.9rem;
+      color: $nord5;
+    }
+  }
+}
+
+.post-share,
+.portfolio-share {
+  margin-top: $spacing-lg;
+  padding-top: $spacing-md;
+  border-top: 1px solid $border-color;
+  h4 {
+    font-size: 1.1rem;
+    margin-bottom: $spacing-sm;
+  }
+  a {
+    margin-right: $spacing-sm;
+  }
+}
+
+// Media queries (Can be global or in specific component files)
+@media (max-width: 768px) {
+  .site-header {
+    // Outer .site-header no longer needs flex properties for layout direction here,
+    // as .container inside it handles the item layout.
+    // It still provides the overall padding for the header area.
+
+    .container {
+      // This is the flex container for title and nav
+      flex-direction: column; // Stack title and nav vertically
+      align-items: center; // Center them horizontally
+    }
+
+    .site-title {
+      margin-bottom: $spacing-sm; // Space below title when stacked
+    }
+
+    .site-nav {
+      // width: 100%; // .site-nav will take available width in column flow
+      display: flex; // Arrange nav links in a row
+      justify-content: center; // Center nav links horizontally
+      flex-wrap: wrap; // Allow nav links to wrap if they don't fit
+      margin-top: $spacing-xs; // Add some space above nav when stacked
+
+      a {
+        margin: ($spacing-xs / 2) $spacing-xs; // Adjust spacing for centered mobile nav items
+        // This overrides the margin-left from desktop to provide even spacing
+      }
+    }
+  }
+
+  .home .intro {
+    font-size: 1.1rem;
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+
+  .home .recent-posts h2 {
+    font-size: 1.5rem;
+  }
+
+  .page-header,
+  .post-header,
+  .portfolio-header {
+    text-align: center;
   }
 }
