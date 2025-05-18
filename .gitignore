@@ -18,4 +18,5 @@ _site/
 Gemfile.lock
 
 # Misc
+_bak/
 prompts/
