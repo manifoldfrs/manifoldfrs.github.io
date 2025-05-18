@@ -1,7 +1,8 @@
 <header class="site-header">
-  <div class="site-title">
-    <a href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a>
+  <div class="container">
+    <div class="site-title">
+      <a href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a>
+    </div>
+    {% include navigation.html %}
   </div>
-
-  {% include navigation.html %}
 </header>

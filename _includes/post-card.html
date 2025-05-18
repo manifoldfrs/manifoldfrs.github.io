@@ -1,0 +1,28 @@
+{% comment %} /** * @description * This component renders a "card" for a single blog post, typically used in listings. * It displays the post's title, metadata (date, categories), excerpt, and a read more link. * * Key features: * - Displays post title linking to the full post. * - Shows post date and categories. * - Renders a truncated excerpt of the post content. * - Provides a "Read More" link to the full post. * * @input * - post: The Jekyll post object to display. * * @dependencies * - Site configuration (`site.baseurl`) for constructing URLs. * - Post frontmatter for title, date, categories, and excerpt. * - Styles from `_sass/_blog.scss` (specifically for `.post-card` and its children). * * @notes * - This component is designed to be included in loops iterating over `site.posts` or `paginator.posts`. * - The `truncatewords` filter is used for the excerpt; this can be adjusted. */ {% endcomment %}
+<article class="post-card">
+  <header class="post-card__header">
+    <h2 class="post-card__title">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+    </h2>
+    <p class="post-card__meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      {% if post.categories.size > 0 %}
+      <span class="post-card__categories">
+        &nbsp;&middot;&nbsp; {% for category in post.categories %}
+        <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}">{{ category | escape }}</a>{% unless forloop.last %}, {% endunless %} {% endfor %}
+      </span>
+      {% endif %} {% assign words = post.content | number_of_words %} {% if words < 360 %} {% assign read_time = 1 %} {% else %} {% assign read_time = words | divided_by:180 %} {% endif %}
+      <span class="post-card__reading-time">&nbsp;&middot;&nbsp; {{ read_time }} min read</span>
+    </p>
+  </header>
+  <div class="post-card__excerpt">
+    <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+  </div>
+  <footer class="post-card__footer">
+    <a
+      href="{{ post.url | prepend: site.baseurl }}"
+      class="post-card__read-more"
+      >Read More &rarr;</a
+    >
+  </footer>
+</article>

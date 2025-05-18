@@ -1,0 +1,88 @@
+{% comment %}
+/**
+ * @description
+ * This component generates pagination links for paginated collections (e.g., blog posts).
+ * It displays links to previous and next pages, as well as page numbers.
+ *
+ * Key features:
+ * - Shows "Previous" and "Next" links.
+ * - Displays page numbers, highlighting the current page.
+ * - Handles edge cases like being on the first or last page.
+ * - Provides ellipsis for numerous pages to keep the component concise.
+ *
+ * @input
+ * - paginator: The Jekyll paginator object, available on pages where pagination is enabled.
+ *
+ * @dependencies
+ * - Jekyll's pagination system and the `paginator` object.
+ * - Styles from `_sass/_pagination.scss`.
+ *
+ * @notes
+ * - This component should only be included on pages where `paginate` is configured in the frontmatter
+ *   or `_config.yml` (e.g., the blog index page).
+ * - The number of page links shown around the current page and at the edges can be configured
+ *   with the `window_size` variable.
+ */
+{% endcomment %}
+{% if paginator.total_pages > 1 %}
+<nav class="pagination" aria-label="Pagination">
+  <ul class="pagination__list">
+    {% if paginator.previous_page %}
+      <li class="pagination__item pagination__item--prev">
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="pagination__link" aria-label="Previous Page">&laquo; Prev</a>
+      </li>
+    {% else %}
+      <li class="pagination__item pagination__item--prev pagination__item--disabled">
+        <span class="pagination__link" aria-hidden="true">&laquo; Prev</span>
+      </li>
+    {% endif %}
+
+    {% assign window_size = 2 %}
+    {% assign show_first_ellipsis = false %}
+    {% assign show_last_ellipsis = false %}
+
+    {% for page_number in (1..paginator.total_pages) %}
+      {% assign page_link = paginator.page_path | replace: ':num', page_number %}
+      {% if page_number == 1 %}
+        <li class="pagination__item {% if page_number == paginator.page %}pagination__item--active{% endif %}">
+          <a href="{{ page_link | prepend: site.baseurl }}" class="pagination__link" {% if page_number == paginator.page %}aria-current="page"{% endif %}>{{ page_number }}</a>
+        </li>
+      {% elsif page_number == paginator.total_pages %}
+        <li class="pagination__item {% if page_number == paginator.page %}pagination__item--active{% endif %}">
+          <a href="{{ page_link | prepend: site.baseurl }}" class="pagination__link" {% if page_number == paginator.page %}aria-current="page"{% endif %}>{{ page_number }}</a>
+        </li>
+      {% else %}
+        {% if page_number < paginator.page - window_size %}
+          {% unless show_first_ellipsis %}
+            <li class="pagination__item pagination__item--disabled pagination__item--ellipsis">
+              <span class="pagination__link">&hellip;</span>
+            </li>
+            {% assign show_first_ellipsis = true %}
+          {% endunless %}
+        {% elsif page_number > paginator.page + window_size %}
+          {% unless show_last_ellipsis %}
+            <li class="pagination__item pagination__item--disabled pagination__item--ellipsis">
+              <span class="pagination__link">&hellip;</span>
+            </li>
+            {% assign show_last_ellipsis = true %}
+          {% endunless %}
+        {% else %}
+          <li class="pagination__item {% if page_number == paginator.page %}pagination__item--active{% endif %}">
+            <a href="{{ page_link | prepend: site.baseurl }}" class="pagination__link" {% if page_number == paginator.page %}aria-current="page"{% endif %}>{{ page_number }}</a>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+      <li class="pagination__item pagination__item--next">
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="pagination__link" aria-label="Next Page">Next &raquo;</a>
+      </li>
+    {% else %}
+      <li class="pagination__item pagination__item--next pagination__item--disabled">
+        <span class="pagination__link" aria-hidden="true">Next &raquo;</span>
+      </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
