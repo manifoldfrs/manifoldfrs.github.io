@@ -24,6 +24,7 @@
  * - `_sass/_base.scss`: Provides foundational HTML element styles.
  * - `_sass/_typography.scss`: Defines typography styles.
  * - `_sass/_code.scss`: Defines styles for code blocks.
+ * - `_sass/_syntax-nord.scss`: Defines Nord theme for syntax highlighting.
  * - `_sass/_layout.scss`: Defines styles for layout containers and structure.
  * - `_sass/_header.scss`: Defines styles for the site header.
  * - `_sass/_footer.scss`: Defines styles for the site footer.
@@ -56,6 +57,7 @@
 // 4. Code Styles
 // Import styles for inline code and preformatted code blocks.
 @import "code";
+@import "syntax-nord"; // Nord theme for syntax highlighting
 
 // 5. Layouts
 // Import styles for major layout components (e.g., header, footer, grid system).

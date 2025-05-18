@@ -1,0 +1,202 @@
+/**
+ * @description
+ * This file defines styles for syntax highlighting using the Nord color theme.
+ * It complements Rouge, the Jekyll syntax highlighter, by providing Nord-themed colors.
+ *
+ * Key features:
+ * - Uses Nord colors for all syntax elements (comments, keywords, strings, etc.)
+ * - Differentiates between various code elements using appropriate Nord colors
+ * - Maintains readability and consistency with the site's Nord theme
+ */
+
+// Base Container
+.highlight {
+  background: $nord1;
+  border-radius: $border-radius-base;
+  margin-bottom: $spacing-md;
+  position: relative; // For copy button positioning
+}
+
+// Rouge highlighter container
+.highlighter-rouge {
+  margin-bottom: $spacing-md;
+  position: relative; // Ensure proper positioning context
+
+  pre.highlight {
+    margin-bottom: 0;
+  }
+}
+
+// Positioning for the copy button (added by code-copy.js)
+.code-copy-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: $nord3;
+  color: $nord6;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: $font-primary; // Use primary font for the button
+  opacity: 0.9;
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); // Add subtle shadow
+  display: block !important; // Force display
+  min-width: 50px;
+  text-align: center;
+
+  &:hover {
+    opacity: 1;
+    background-color: $nord8; // Primary Accent on hover
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($nord8, 0.4);
+  }
+
+  &.copied {
+    background-color: $nord14; // Success color (green)
+    opacity: 1;
+  }
+}
+
+// Nord theme syntax highlighting for Rouge
+.highlight {
+  // Comments
+  .c,
+  .cm,
+  .cp,
+  .c1,
+  .cs {
+    color: $nord4;
+    font-style: italic;
+  } // Comments, DocStrings
+
+  // Error
+  .err {
+    color: $nord11;
+  } // Error
+
+  // Keywords
+  .k,
+  .kc,
+  .kd,
+  .kn,
+  .kp,
+  .kr,
+  .kt {
+    color: $nord9;
+  } // Keyword, Type
+
+  // String literals
+  .s,
+  .sb,
+  .sc,
+  .sd,
+  .s2,
+  .se,
+  .sh,
+  .si,
+  .sx,
+  .sr,
+  .s1,
+  .ss {
+    color: $nord14;
+  } // String
+
+  // Numbers, constants, functions
+  .m,
+  .mb,
+  .mf,
+  .mh,
+  .mi,
+  .mo {
+    color: $nord15;
+  } // Number
+  .na,
+  .nx {
+    color: $nord7;
+  } // Name.Attribute, JS/TS object properties
+  .nb {
+    color: $nord8;
+  } // Name.Builtin
+  .no {
+    color: $nord13;
+  } // Name.Constant
+  .nd {
+    color: $nord9;
+  } // Name.Decorator
+  .nf,
+  .fm {
+    color: $nord8;
+  } // Name.Function, Function.Magic
+  .nt {
+    color: $nord9;
+  } // Name.Tag
+  .nv,
+  .vc,
+  .vg,
+  .vi {
+    color: $nord7;
+  } // Name.Variable
+
+  // Operators
+  .o,
+  .ow {
+    color: $nord9;
+  } // Operator, Operator.Word
+
+  // Punctuation
+  .p {
+    color: $nord6;
+  } // Punctuation
+
+  // Language-specific adjustments
+  .language-python .kn {
+    color: $nord9;
+  } // Python imports
+  .language-python .nn {
+    color: $nord7;
+  } // Python namespace
+
+  .language-javascript .nx,
+  .language-typescript .nx {
+    color: $nord7;
+  } // JS/TS property names
+
+  .language-html .nt {
+    color: $nord9;
+  } // HTML tags
+  .language-html .na {
+    color: $nord7;
+  } // HTML attributes
+  .language-html .s {
+    color: $nord14;
+  } // HTML strings
+
+  .language-css .nc {
+    color: $nord7;
+  } // CSS class selector
+  .language-css .k {
+    color: $nord9;
+  } // CSS property
+  .language-css .nt {
+    color: $nord9;
+  } // CSS element selector
+
+  .language-ruby .ss {
+    color: $nord13;
+  } // Ruby symbol
+}
+
+// Background and text color for code blocks
+pre.highlight {
+  background-color: $nord1;
+  color: $nord6;
+}

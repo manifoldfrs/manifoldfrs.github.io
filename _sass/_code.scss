@@ -45,6 +45,7 @@ pre {
   background-color: $nord1; // Secondary Background: Nord Dark Gray (lighter)
   color: $nord6; // Text Color: Nord Snow Storm for code block text
   padding: $spacing-md; // Generous padding: 24px
+  padding-right: 50px; // Extra padding on the right for the copy button
   margin-top: 0;
   margin-bottom: $spacing-md; // Default bottom margin: 24px
   border: 1px solid $nord3; // Subtle border using Polar Night

@@ -3,13 +3,18 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/code-copy.css" | prepend: site.baseurl }}">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ "/assets/images/favicon.png" | prepend: site.baseurl }}">
 
   <!-- JavaScript -->
-  <!-- Main site script (if any, can be combined or kept separate) -->
+  <!-- Main site script -->
   <script defer src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
-  <!-- Mobile Navigation Script (Step 13) -->
+  <!-- Mobile navigation script -->
   <script defer src="{{ "/assets/js/navigation.js" | prepend: site.baseurl }}"></script>
+  <!-- Clipboard.js for code copying -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+  <!-- Custom code copy script -->
+  <script defer src="{{ "/assets/js/copy-code.js" | prepend: site.baseurl }}"></script>
 </head>
