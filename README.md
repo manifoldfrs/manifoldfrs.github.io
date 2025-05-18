@@ -74,6 +74,31 @@ The site is built with Jekyll and follows a modular component architecture. Key 
 
 The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
 
+### Automated Deployment
+
+This site uses GitHub Actions for automated builds and deployments:
+
+1. When you push changes to the `main` branch, the GitHub Actions workflow is triggered
+2. The workflow builds the site using Jekyll
+3. The built site is automatically deployed to GitHub Pages
+
+### Manual Deployment
+
+You can also trigger the deployment manually:
+
+1. Go to the GitHub repository
+2. Navigate to the "Actions" tab
+3. Select the "Build and Deploy to GitHub Pages" workflow
+4. Click "Run workflow"
+
+### Configuration
+
+To enable GitHub Pages for this repository:
+
+1. Go to the repository settings
+2. Navigate to the "Pages" section
+3. Under "Source", select "GitHub Actions" as the deployment method
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
