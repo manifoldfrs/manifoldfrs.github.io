@@ -6,6 +6,6 @@ categories:
   - Posts
 ---
 
-They just refuse to become victims to it.
+They just refuse to become victims of it.
 
 ![Migrant Mother](/assets/images/migrant_mother.jpg)
