@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="category-archive-page container py-5">
+  <header class="page-header mb-4">
+    <h1 class="page-title">Category: {{ page.title | escape }}</h1>
+    {% if page.description %}
+    <p class="category-description">{{ page.description | escape }}</p>
+    {% endif %}
+  </header>
+
+  <div class="post-list">
+    {% if page.posts.size > 0 %} {% for post in page.posts %}
+    <article class="post-list-item mb-5 pb-3 border-bottom">
+      <h2 class="post-list-title h3">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+      </h2>
+      <p class="post-list-meta text-muted mb-2">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+        {% if post.author %}
+        <span>&middot; By {{ post.author | escape }}</span>
+        {% endif %}
+      </p>
+      <div class="post-list-excerpt mb-2">{{ post.excerpt | strip_html | truncatewords: 50 }}</div>
+      <a
+        href="{{ post.url | prepend: site.baseurl }}"
+        class="read-more-link"
+        >Read More &rarr;</a
+      >
+    </article>
+    {% endfor %} {% else %}
+    <p>No posts found in the "{{ page.title | escape }}" category.</p>
+    {% endif %}
+  </div>
+
+  <!-- Basic pagination for category archives (jekyll-archives may not support pagination out of the box for archive pages without jekyll-paginate-v2) -->
+  {% comment %} If you need pagination here, you might need to look into how jekyll-archives interacts with pagination plugins, or implement a simpler "previous/next" posts if page.posts is a paginated collection by another plugin. Jekyll-archives itself doesn't paginate the `page.posts` it provides to the layout. {% endcomment %}
+</div>

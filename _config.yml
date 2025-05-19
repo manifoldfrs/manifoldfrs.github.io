@@ -78,6 +78,15 @@ plugins:
   - jekyll-paginate
   - jekyll-archives
 
+# jekyll-archives configuration
+jekyll-archives:
+  enabled:
+    - categories
+  layouts:
+    category: category_archive # This will be the layout for category pages
+  permalinks:
+    category: /categories/:name/ # Matches the link structure in _includes/category-list.html
+
 # Exclude from processing
 exclude:
   - Gemfile
