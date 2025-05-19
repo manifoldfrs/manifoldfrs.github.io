@@ -4,25 +4,20 @@ layout: default
 
 <article class="portfolio-item">
   <header class="portfolio-header">
-    <h1 class="portfolio-title">{{ page.title }}</h1>
+    <h1 class="portfolio-title">{{ page.title | escape }}</h1>
     <p class="portfolio-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}"> {{ page.date | date: "%b %-d, %Y" }} </time>
       {% if page.categories.size > 0 %}
       <span class="portfolio-categories">
         in {% for category in page.categories %}
-        <a href="{{ site.baseurl }}/portfolio/categories/#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %} {% endfor %}
+        <a href="{{ '/portfolio/categories/' | append: category | slugify | relative_url }}">{{ category | escape }}</a>{% unless forloop.last %}, {% endunless %} {% endfor %}
       </span>
       {% endif %}
     </p>
   </header>
 
   {% if page.featured_image %}
-  <div class="portfolio-featured-image">
-    <img
-      src="{{ page.featured_image | prepend: site.baseurl }}"
-      alt="{{ page.title }}"
-    />
-  </div>
+  <div class="portfolio-featured-image"><img src="{{ page.featured_image | relative_url }}" alt="{{ page.description | default: page.title | escape }}" loading="lazy" width="740" {% comment %} Assuming content max width, adjust if actual image dimensions known and different {% endcomment %} height="416" {% comment %} Example height, maintain aspect ratio or use CSS. Explicit W/H helps CLS. {% endcomment %} /></div>
   {% endif %}
 
   <div class="portfolio-content">{{ content }}</div>
@@ -32,7 +27,7 @@ layout: default
     <h3>Technologies Used</h3>
     <ul>
       {% for tech in page.technologies %}
-      <li>{{ tech }}</li>
+      <li>{{ tech | escape }}</li>
       {% endfor %}
     </ul>
   </div>
@@ -40,15 +35,17 @@ layout: default
   <div class="portfolio-share">
     <h4>Share this project</h4>
     <a
-      href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+      href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
+      aria-label="Share this project, {{ page.title | escape }}, on Twitter"
       >Twitter</a
     >
     <a
-      href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title | url_encode }}"
+      href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}&title={{ page.title | url_encode }}"
       target="_blank"
-      rel="noopener"
+      rel="noopener noreferrer"
+      aria-label="Share this project, {{ page.title | escape }}, on LinkedIn"
       >LinkedIn</a
     >
   </div>

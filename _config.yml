@@ -2,10 +2,10 @@
 title: Faris
 email: faris@duck.com
 description: An Esoteric Garden
-baseurl: "/frshbb.github.io"
-url: "https://manifoldfrs.github.io"
-enforce_ssl: "https://manifoldfrs.github.io/frshbb.github.io/"
-lang: en
+baseurl: ""
+url: "https://frshbb.github.io"
+# enforce_ssl: "https://manifoldfrs.github.io/frshbb.github.io/" # Removed: GitHub Pages enforces SSL. jekyll-seo-tag handles protocol.
+lang: en_US
 timezone: UTC
 
 # Author information
@@ -25,6 +25,12 @@ social:
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  # For lazy loading images in Markdown:
+  # Add attributes directly in Markdown: ![alt text](image.jpg){: loading="lazy"}
 highlighter: rouge
 permalink: /:year/:month/:day/:title/
 paginate: 10
@@ -70,6 +76,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-archives
 
 # Exclude from processing
 exclude:
@@ -88,6 +95,9 @@ exclude:
   - README.md
   - prompts
   - config.yml
+  - .github/
+  - .cursorrules
+  - frshbb.github.io.code-workspace
 
 # Nord theme color scheme
 nord_colors:
