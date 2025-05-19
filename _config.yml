@@ -2,7 +2,7 @@
 title: Faris
 email: faris@duck.com
 description: An Esoteric Garden
-baseurl: "/frshbb.github.io"
+baseurl: ""
 url: "https://manifoldfrs.github.io"
 # enforce_ssl: "https://manifoldfrs.github.io/frshbb.github.io/" # Removed: GitHub Pages enforces SSL. jekyll-seo-tag handles protocol.
 lang: en_US
