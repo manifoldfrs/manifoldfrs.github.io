@@ -3,15 +3,30 @@
 // at the top-right of every Rouge-generated code block.
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Check if ClipboardJS is loaded
+  if (typeof ClipboardJS === "undefined") {
+    console.error("ClipboardJS not loaded. Copy-to-clipboard functionality will not work.");
+    return;
+  }
+
   // Select all Rouge code wrappers
   const codeWrappers = document.querySelectorAll("div.highlighter-rouge");
+  console.log(`Found ${codeWrappers.length} Rouge code wrappers.`);
 
   codeWrappers.forEach(function (wrapper, idx) {
+    console.log(`Processing wrapper ${idx + 1}...`);
     const highlightDiv = wrapper.querySelector("div.highlight");
-    if (!highlightDiv) return;
+    if (!highlightDiv) {
+      console.warn(`Wrapper ${idx + 1} does not contain div.highlight.`);
+      return;
+    }
 
     const preEl = highlightDiv.querySelector("pre.highlight"); // Target pre.highlight specifically
-    if (!preEl) return;
+    if (!preEl) {
+      console.warn(`Wrapper ${idx + 1} (div.highlight) does not contain pre.highlight.`);
+      return;
+    }
+    console.log(`Found pre.highlight in wrapper ${idx + 1}.`);
 
     // Ensure the pre has an id for clipboard.js
     const preId = `code-block-${idx}`; // Make ID more specific
@@ -32,25 +47,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Insert button as first child of highlight div so it sits above the code, but controlled by CSS positioning
     highlightDiv.insertBefore(button, highlightDiv.firstChild);
+    console.log(`Button added for wrapper ${idx + 1} with target #${preId}.`);
 
-    const clipboard = new ClipboardJS(button);
-    const buttonSpan = button.querySelector("span");
+    try {
+      const clipboard = new ClipboardJS(button);
+      const buttonSpan = button.querySelector("span");
 
-    clipboard.on("success", function (e) {
-      e.clearSelection();
-      if (buttonSpan) buttonSpan.textContent = "Copied!";
-      button.classList.add("copied");
-      setTimeout(() => {
-        if (buttonSpan) buttonSpan.textContent = "Copy";
-        button.classList.remove("copied");
-      }, 2000);
-    });
+      clipboard.on("success", function (e) {
+        console.log(`Successfully copied from #${preId}`);
+        e.clearSelection();
+        if (buttonSpan) buttonSpan.textContent = "Copied!";
+        button.classList.add("copied");
+        setTimeout(() => {
+          if (buttonSpan) buttonSpan.textContent = "Copy";
+          button.classList.remove("copied");
+        }, 2000);
+      });
 
-    clipboard.on("error", function (e) {
-      if (buttonSpan) buttonSpan.textContent = "Error";
-      setTimeout(() => {
-        if (buttonSpan) buttonSpan.textContent = "Copy";
-      }, 2000);
-    });
+      clipboard.on("error", function (e) {
+        console.error(`Error copying from #${preId}:`, e);
+        if (buttonSpan) buttonSpan.textContent = "Error";
+        setTimeout(() => {
+          if (buttonSpan) buttonSpan.textContent = "Copy";
+        }, 2000);
+      });
+      console.log(`ClipboardJS initialized for button in wrapper ${idx + 1}.`);
+    } catch (error) {
+      console.error(`Failed to initialize ClipboardJS for wrapper ${idx + 1}:`, error);
+    }
   });
 });

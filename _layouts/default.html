@@ -6,35 +6,69 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link
+      rel="preconnect"
+      href="https://cdnjs.cloudflare.com"
+    />
 
-    {% include meta.html %} <!-- SEO and other meta tags -->
+    {% include meta.html %}
+    <!-- SEO and other meta tags -->
 
     <title>{% if page.title %}{{ page.title | escape }} | {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/code-copy.css' | relative_url }}">
-    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/main.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/code-copy.css' | relative_url }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ '/assets/images/favicon.png' | relative_url }}"
+    />
 
     <!-- JavaScript -->
     <!-- Main site script -->
-    <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script
+      defer
+      src="{{ '/assets/js/main.js' | relative_url }}"
+    ></script>
     <!-- Mobile navigation script -->
-    <script defer src="{{ '/assets/js/navigation.js' | relative_url }}"></script>
+    <script
+      defer
+      src="{{ '/assets/js/navigation.js' | relative_url }}"
+    ></script>
     <!-- Clipboard.js for code copying -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7LeDzzGyZBTLMAKSoYHFcCNKMo4YfC9VF4 specialising="anonymous"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Custom code copy script -->
-    <script defer src="{{ '/assets/js/copy-code.js' | relative_url }}"></script>
+    <script
+      defer
+      src="{{ '/assets/js/copy-code.js' | relative_url }}"
+    ></script>
 
-    {% feed_meta %} <!-- For RSS feed, if jekyll-feed is used -->
-    {% if site.google_analytics %}
-      {% include analytics.html %} <!-- Google Analytics snippet -->
+    {% feed_meta %}
+    <!-- For RSS feed, if jekyll-feed is used -->
+    {% if site.google_analytics %} {% include analytics.html %}
+    <!-- Google Analytics snippet -->
     {% endif %}
   </head>
   <body>
     {% include header.html %}
 
-    <main class="container site-content" id="main-content" tabindex="-1">{{ content }}</main>
+    <main
+      class="container site-content"
+      id="main-content"
+      tabindex="-1"
+    >
+      {{ content }}
+    </main>
 
     {% include footer.html %}
   </body>

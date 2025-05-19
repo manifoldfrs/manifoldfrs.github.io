@@ -14,11 +14,11 @@
     <h4>Share this post</h4>
     {% comment %} Placeholder for more advanced share buttons from Step 15 {% endcomment %}
     <a
-      href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}&via={{ site.social.twitter | default: '' }}"
+      href="https://x.com/intent/tweet?text={{ page.title | url_encode }}&url={{ page.url | absolute_url | url_encode }}&via={{ site.social.x | default: '' }}"
       target="_blank"
       rel="noopener"
-      aria-label="Share on Twitter"
-      >Twitter</a
+      aria-label="Share on X"
+      >X</a
     >
     <a
       href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}&title={{ page.title | url_encode }}&summary={{ page.excerpt | strip_html | truncatewords: 20 | url_encode }}&source={{ site.title | url_encode }}"
