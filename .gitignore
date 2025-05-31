@@ -20,3 +20,4 @@ Gemfile.lock
 # Misc
 _bak/
 prompts/
+assets/.DS_Store
