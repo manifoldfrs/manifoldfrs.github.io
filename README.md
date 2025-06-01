@@ -10,7 +10,7 @@ This is the repository for my personal website, [frshbb.github.io](https://frshb
 - **Portfolio**: A showcase of my projects and work, with detailed descriptions, images, and links to live versions or repositories.
 - **Responsive Design**: Optimized for a seamless experience across all devices (desktops, tablets, and mobile phones).
 - **Nord Color Scheme**: A visually appealing and consistent color palette.
-- **Social Media Integration**: Links to my profiles on various social media platforms (LinkedIn, GitHub, X, Instagram, Substack).
+- **Social Media Integration**: Links to my profiles on various social media platforms (LinkedIn, GitHub, X, Substack).
 - **Search Functionality**: Client-side search powered by Simple-Jekyll-Search (to be implemented).
 - **Performance Optimized**: Fast loading times through optimized assets and efficient code.
 - **Accessibility Focused**: Built with accessibility best practices in mind.
