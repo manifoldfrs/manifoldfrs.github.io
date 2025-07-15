@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background-dark text-text-primary;
+  }
+  
+  body {
+    @apply font-sans leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-text-primary;
+  }
+  
+  a {
+    @apply text-links hover:text-primary transition-colors;
+  }
+  
+  code {
+    @apply bg-background-darker text-tertiary px-1 py-0.5 rounded text-sm font-mono;
+  }
+  
+  pre {
+    @apply bg-background-darker p-4 rounded-lg overflow-x-auto;
+  }
+  
+  pre code {
+    @apply bg-transparent p-0 text-text-primary;
+  }
+  
+  blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-text-secondary;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-background-dark px-4 py-2 rounded hover:bg-nord-8 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-background-darker text-text-primary px-4 py-2 rounded hover:bg-nord-2 transition-colors;
+  }
+  
+  .post-card {
+    @apply bg-background-darker rounded-lg p-6 hover:bg-nord-2 transition-colors;
+  }
+  
+  .nav-link {
+    @apply text-text-primary hover:text-primary transition-colors;
+  }
+}
