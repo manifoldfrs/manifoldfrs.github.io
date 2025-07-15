@@ -5,7 +5,7 @@ import { remark } from 'remark'
 import html from 'remark-html'
 import { format } from 'date-fns'
 
-const postsDirectory = path.join(process.cwd(), '_posts')
+const postsDirectory = path.join(process.cwd(), 'jekyll-backup/_posts')
 
 export interface PostData {
   slug: string

@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
-const portfolioDirectory = path.join(process.cwd(), '_portfolio')
+const portfolioDirectory = path.join(process.cwd(), 'jekyll-backup/_portfolio')
 
 export interface PortfolioData {
   slug: string
