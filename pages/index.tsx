@@ -14,7 +14,7 @@ export default function Home({ posts }: HomeProps) {
   return (
     <Layout
       title='Home'
-      description='An Esoteric Garden - Personal blog and thoughts by Faris Habib'
+      description='Personal blog and thoughts by Faris Habib'
     >
       <div className='space-y-8'>
         {/* Recent Posts */}
