@@ -29,6 +29,23 @@ export default function About() {
             </div>
           </section>
 
+          {/* Currently Listening */}
+          <section className='bg-background-darker rounded-lg p-6'>
+            <h2 className='text-xl font-semibold text-text-primary mb-4'>Currently Listening</h2>
+            <div className='w-full'>
+              <iframe
+                style={{ borderRadius: '12px' }}
+                src="https://open.spotify.com/embed/track/362bgJ9BU3oEfkMaSqx1Nt?utm_source=generator"
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              />
+            </div>
+          </section>
+
           {/* Contact */}
           <section className='bg-background-darker rounded-lg p-6'>
             <h2 className='text-xl font-semibold text-text-primary mb-4'>Get in Touch</h2>
