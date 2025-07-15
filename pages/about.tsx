@@ -23,7 +23,7 @@ export default function About() {
 
               <p>I&apos;m Faris, an autodidact exploring the intersections of technology, philosophy, and the human condition. This blog serves as my digital commonplace book, where I cultivate ideas across diverse domains.</p>
 
-              <p>You&apos;ll find reflections on everything from software development and machine learning to diet and fitness, from religious contemplation to practical life philosophy and poetry. The garden metaphor isn&apos;t just aesthetic—it reflects my belief that the most interesting insights often emerge from the cross-pollination of seemingly unrelated fields.</p>
+              <p>You&apos;ll find reflections on everything from software development and machine learning to diet and fitness, from religious contemplation, to practical life philosophy, and poetry. The garden metaphor isn&apos;t just aesthetic—it reflects my belief that the most interesting insights often emerge from the cross-pollination of seemingly unrelated fields.</p>
 
               <p>Currently wandering the world as a digital nomad, I&apos;m always open to thoughtful conversation and collaboration.</p>
             </div>
