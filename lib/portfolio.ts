@@ -100,7 +100,10 @@ export async function getPortfolioData(slug: string): Promise<PortfolioData> {
   const processedContent = await remark()
     .use(html)
     .process(matterResult.content)
-  const contentHtml = processedContent.toString()
+  let contentHtml = processedContent.toString()
+  
+  // Fix image paths from Jekyll format to Next.js format
+  contentHtml = contentHtml.replace(/\/assets\/images\//g, '/images/')
 
   // Combine the data with the slug
   return {
