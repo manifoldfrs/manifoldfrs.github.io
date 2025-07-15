@@ -1,0 +1,63 @@
+/* Styling for code copy button */
+
+/* Container for the copy button */
+.code-copy-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -1px;
+  position: relative;
+  z-index: 2;
+}
+
+/* The copy button */
+.code-copy-button {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #8fbcbb; /* clipboard icon color */
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.code-copy-button:hover {
+  opacity: 1;
+  color: #88c0d0;
+}
+
+.code-copy-button.copied {
+  color: #a3be8c;
+  opacity: 1;
+}
+
+.copy-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+/* Make sure highlighter-rouge container has proper spacing */
+.highlighter-rouge {
+  position: relative; /* Needed for absolute positioning of the button */
+  padding-top: 30px; /* Make space for the button */
+}
+
+/* Ensure the button is visible */
+pre.highlight {
+  margin-top: 0; /* remove default top margin */
+}
+
+/* Ensure highlight container leaves space for button */
+.highlighter-rouge > .highlight {
+  padding-top: 0 !important;
+  position: relative;
+}
+
+/* Ensure highlight container relative for positioning */
+.highlighter-rouge .highlight {
+  position: relative;
+}

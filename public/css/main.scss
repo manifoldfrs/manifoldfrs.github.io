@@ -1,0 +1,102 @@
+---
+# Front matter dashes are required for Jekyll to process SCSS files.
+# Do not remove them.
+---
+
+/**
+ * @description
+ * This is the main SCSS file for the website. It imports all other SCSS partials,
+ * including variables, base styles, layout styles, component styles, and page-specific styles.
+ * The order of imports is crucial for the correct application of styles due to the cascading nature of CSS.
+ *
+ * Key structure:
+ * 1. Variables: Global SCSS variables (colors, fonts, spacing).
+ * 2. Base: Reset/normalize styles and base HTML element styling.
+ * 3. Typography: Styles for text elements, headings, links, etc.
+ * 4. Code: Styles for inline code and code blocks.
+ * 5. Layouts: Styles for major layout components (header, footer, grid, mobile navigation).
+ * 6. Components: Styles for reusable UI components (buttons, cards, navigation).
+ * 7. Pages: Specific styles for individual pages or page types.
+ * 8. Utilities: Utility classes for common styling needs.
+ *
+ * @dependencies
+ * - `_sass/_variables.scss`: Defines global design tokens.
+ * - `_sass/_base.scss`: Provides foundational HTML element styles.
+ * - `_sass/_typography.scss`: Defines typography styles.
+ * - `_sass/_code.scss`: Defines styles for code blocks.
+ * - `_sass/_syntax-nord.scss`: Defines Nord theme for syntax highlighting.
+ * - `_sass/_layout.scss`: Defines styles for layout containers and structure.
+ * - `_sass/_header.scss`: Defines styles for the site header.
+ * - `_sass/_footer.scss`: Defines styles for the site footer.
+ * - `_sass/_navigation.scss`: Defines styles for desktop navigation elements.
+ * - `_sass/_mobile.scss`: Defines styles for mobile navigation.
+ * - `_sass/_home.scss`: Defines styles for the homepage.
+ * - `_sass/_pages.scss`: Defines styles for static pages.
+ * - `_sass/_blog.scss`: Defines styles for blog listing and post cards.
+ * - `_sass/_post.scss`: Defines styles for individual blog posts.
+ * - `_sass/_pagination.scss`: Defines styles for pagination component.
+ * - `_sass/_categories.scss`: Defines styles for category pages and listings.
+ *
+ * @notes
+ * - Ensure new SCSS partials are imported in the correct section to maintain the cascade.
+ * - This file itself should contain minimal direct styling; its primary role is to orchestrate imports.
+ */
+
+// 1. Variables
+// Import global SCSS variables (colors, typography, spacing, etc.)
+@import "variables";
+
+// 2. Base Styles
+// Import reset/normalize and base HTML element styles.
+@import "base";
+
+// 3. Typography Styles
+// Import styles for text elements like headings, paragraphs, links, lists etc.
+@import "typography";
+
+// 4. Code Styles
+// Import styles for inline code and preformatted code blocks.
+@import "code";
+@import "syntax-nord"; // Nord theme for syntax highlighting
+
+// 5. Layouts
+// Import styles for major layout components (e.g., header, footer, grid system).
+@import "layout"; // Styles for layout containers and structure
+@import "header"; // Styles for the site header
+@import "footer"; // Styles for the site footer
+@import "navigation"; // Styles for desktop navigation elements
+@import "mobile"; // Styles for mobile navigation (Step 13)
+
+// 6. Components
+// Import styles for reusable UI components (e.g., buttons, cards).
+// Example:
+// @import "components/buttons";
+// @import "components/cards";
+@import "pagination"; // Styles for pagination component (Step 10)
+// @import "components/post-card"; // Styles for post-card are in _blog.scss for now
+
+// 7. Pages
+// Import specific styles for individual pages or page types.
+@import "home"; // Styles for the homepage (Step 8)
+@import "pages"; // Styles for static pages like About (Step 9)
+@import "blog"; // Styles for blog listing and post cards (Step 10)
+@import "post"; // Styles for individual blog posts (Step 11)
+@import "categories"; // Styles for category pages and listings (Step 12)
+// Example:
+// @import "pages/portfolio"; // Will be created in Step 13
+
+// 8. Utilities
+// Import utility classes (e.g., spacing helpers, visibility classes).
+// Example:
+// @import "utilities";
+
+// Styles that were previously in main.scss have been moved to their respective partials:
+// - Header styles -> _header.scss
+// - Footer styles -> _footer.scss
+// - Navigation styles within header -> _navigation.scss
+// - Page/Post/Portfolio header styles -> _layout.scss (as a common element styling)
+// - Content styles (post-content, page-content) -> _layout.scss
+// - Blog/Portfolio item listing styles will go into _blog.scss, _portfolio.scss (Steps 10 & 13)
+// - Portfolio image/tech styles will go into _portfolio.scss or _portfolio-item.scss (Steps 13 & 14)
+// - Share styles will go into _share.scss (Step 17)
+// - Media queries are now distributed into the relevant partials or will be added to mobile-specific partials.
