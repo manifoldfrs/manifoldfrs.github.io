@@ -20,8 +20,8 @@ const defaultMeta = {
 
 export default function SEO({ title, description = defaultMeta.description, url = defaultMeta.url, image = defaultMeta.image, type = 'website', publishedAt, modifiedAt }: SEOProps) {
   const fullTitle = title ? `${title} | ${defaultMeta.title}` : defaultMeta.title;
-  const fullUrl = url.startsWith('http') ? url : `${defaultMeta.url}${url}`;
-  const fullImage = image.startsWith('http') ? image : `${defaultMeta.url}${image}`;
+  const fullUrl = url?.startsWith('http') ? url : `${defaultMeta.url}${url || ''}`;
+  const fullImage = image?.startsWith('http') ? image : `${defaultMeta.url}${image || ''}`;
 
   return (
     <Head>
