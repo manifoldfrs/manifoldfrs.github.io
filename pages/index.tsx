@@ -9,32 +9,31 @@ interface HomeProps {
 }
 
 export default function Home({ posts }: HomeProps) {
-  const recentPosts = posts.slice(0, 5); // Show latest 5 posts
+  const recentPosts = posts.slice(0, 5);
 
   return (
     <Layout
-      title='Home'
-      description='Personal blog and thoughts by Faris Habib'
+      title="Home"
+      description="Personal blog and thoughts by Faris Habib"
     >
-      <div className='space-y-8'>
+      <div className="space-y-8">
         {/* Recent Posts */}
         <section>
-          <div className='flex items-center justify-between mb-6'>
-            <h2 className='text-2xl font-semibold text-text-primary'>Recent Posts</h2>
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-semibold text-text-primary">
+              Recent Posts
+            </h2>
             <Link
-              href='/blog'
-              className='text-links hover:text-primary transition-colors'
+              href="/blog"
+              className="text-links hover:text-primary transition-colors"
             >
               View all posts →
             </Link>
           </div>
 
-          <div className='space-y-6'>
+          <div className="space-y-6">
             {recentPosts.map((post) => (
-              <PostCard
-                key={post.slug}
-                post={post}
-              />
+              <PostCard key={post.slug} post={post} />
             ))}
           </div>
         </section>
@@ -49,7 +48,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      posts
-    }
+      posts,
+    },
   };
 };
