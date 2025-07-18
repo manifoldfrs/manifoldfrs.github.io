@@ -25,9 +25,10 @@ class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
+      // Always show error for debugging
       return (
         <div className="min-h-screen flex items-center justify-center bg-background-dark">
-          <div className="text-center p-8">
+          <div className="text-center p-4 max-w-full mx-4">
             <h1 className="text-2xl font-bold text-text-primary mb-4">
               Oops! Something went wrong
             </h1>
@@ -35,15 +36,22 @@ class ErrorBoundary extends Component<Props, State> {
               We&apos;re sorry, but something went wrong. Please try refreshing the page.
             </p>
             <button
-              onClick={() => this.setState({ hasError: false, error: null })}
+              onClick={() => window.location.reload()}
               className="px-4 py-2 bg-primary text-background-dark rounded hover:bg-primary-light transition-colors"
             >
-              Try again
+              Refresh Page
             </button>
-            {process.env.NODE_ENV === 'development' && this.state.error && (
-              <pre className="mt-4 p-4 bg-nord-1 rounded text-left text-sm overflow-auto max-w-2xl mx-auto">
-                {this.state.error.toString()}
-              </pre>
+            {this.state.error && (
+              <div className="mt-4 p-4 bg-nord-1 rounded text-left overflow-auto max-w-full">
+                <p className="text-xs font-mono break-all text-error">
+                  {this.state.error.toString()}
+                </p>
+                {this.state.error.stack && (
+                  <pre className="text-xs mt-2 text-text-secondary overflow-x-auto">
+                    {this.state.error.stack}
+                  </pre>
+                )}
+              </div>
             )}
           </div>
         </div>
