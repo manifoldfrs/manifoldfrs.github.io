@@ -15,7 +15,20 @@ interface PostsByYear {
 export default function Archive({ posts }: ArchiveProps) {
   // Group posts by year
   const postsByYear = posts.reduce<PostsByYear>((acc, post) => {
-    const year = new Date(post.date).getFullYear().toString()
+    let year: string
+    try {
+      const date = new Date(post.date)
+      if (isNaN(date.getTime())) {
+        // If date is invalid, try to use the year from the post metadata
+        year = post.year || 'Unknown'
+      } else {
+        year = date.getFullYear().toString()
+      }
+    } catch (error) {
+      // Fallback to year from post metadata or 'Unknown'
+      year = post.year || 'Unknown'
+    }
+    
     if (!acc[year]) {
       acc[year] = []
     }
@@ -60,7 +73,14 @@ export default function Archive({ posts }: ArchiveProps) {
                         dateTime={post.date}
                         className="text-text-secondary text-sm sm:w-24 flex-shrink-0"
                       >
-                        {formatDate(post.date).replace(`, ${year}`, '')}
+                        {(() => {
+                          const formatted = formatDate(post.date)
+                          // Only remove year if the date was formatted successfully
+                          if (formatted !== 'Invalid date' && formatted !== 'Date error' && formatted !== 'No date') {
+                            return formatted.replace(`, ${year}`, '')
+                          }
+                          return formatted
+                        })()}
                       </time>
                       
                       <div className="flex-1 min-w-0">
