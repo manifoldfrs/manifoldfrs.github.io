@@ -49,15 +49,24 @@ export function formatDate(dateString: string): string {
       return 'No date'
     }
     
-    const date = new Date(dateString)
-    
-    // Check if date is valid
-    if (isNaN(date.getTime())) {
-      console.error('Invalid date string:', dateString)
-      return 'Invalid date'
+    // Extract just the date part (YYYY-MM-DD) from strings like "2025-05-18 15:23:07 -0800"
+    const dateMatch = dateString.match(/^(\d{4}-\d{2}-\d{2})/)
+    if (dateMatch) {
+      // Parse just the date part
+      const date = new Date(dateMatch[1] + 'T00:00:00Z')
+      if (!isNaN(date.getTime())) {
+        return format(date, 'MMMM d, yyyy')
+      }
     }
     
-    return format(date, 'MMMM d, yyyy')
+    // Fallback: try parsing the full string
+    const date = new Date(dateString)
+    if (!isNaN(date.getTime())) {
+      return format(date, 'MMMM d, yyyy')
+    }
+    
+    console.error('Invalid date string:', dateString)
+    return 'Invalid date'
   } catch (error) {
     console.error('Error formatting date:', dateString, error)
     return 'Date error'
