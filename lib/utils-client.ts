@@ -43,6 +43,23 @@ export function createExcerpt(content: string, length: number = 150): string {
 }
 
 export function formatDate(dateString: string): string {
-  const date = new Date(dateString)
-  return format(date, 'MMMM d, yyyy')
+  try {
+    // Handle empty or invalid date strings
+    if (!dateString) {
+      return 'No date'
+    }
+    
+    const date = new Date(dateString)
+    
+    // Check if date is valid
+    if (isNaN(date.getTime())) {
+      console.error('Invalid date string:', dateString)
+      return 'Invalid date'
+    }
+    
+    return format(date, 'MMMM d, yyyy')
+  } catch (error) {
+    console.error('Error formatting date:', dateString, error)
+    return 'Date error'
+  }
 }
