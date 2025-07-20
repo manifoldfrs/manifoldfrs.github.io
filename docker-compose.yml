@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # Frontend Next.js app
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+      - NEXT_PUBLIC_USE_API=true
+    depends_on:
+      - backend
+
+  # Backend FastAPI app
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://blog:password@db:5432/blog
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - db
+      - redis
+
+  # PostgreSQL database
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=blog
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=blog
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # Redis for caching
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  # MinIO for local S3 development
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+
+volumes:
+  postgres_data:
+  minio_data:
