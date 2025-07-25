@@ -4,8 +4,7 @@ const socialLinks = [
   { name: 'GitHub', href: 'https://github.com/manifoldfrs', icon: 'github' },
   { name: 'X (Twitter)', href: 'https://x.com/frshbb', icon: 'twitter' },
   { name: 'LinkedIn', href: 'https://linkedin.com/in/farishabib', icon: 'linkedin' },
-  { name: 'Substack', href: 'https://frshbb.substack.com', icon: 'substack' },
-  { name: 'Delphi Mind', href: 'https://www.delphi.ai/faris-habib', icon: 'delphi' }
+  { name: 'Substack', href: 'https://frshbb.substack.com', icon: 'substack' }
 ];
 
 const SocialIcon = ({ icon }: { icon: string }) => {
