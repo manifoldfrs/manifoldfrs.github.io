@@ -1,19 +1,19 @@
-import Link from 'next/link'
-import { useState } from 'react'
-import { cn } from '@/lib/utils'
+import Link from 'next/link';
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Let us not talk falsely now', href: '/delphi' },
+  { name: 'Let Us Not Talk Falsely Now', href: '/delphi' },
   { name: 'Categories', href: '/categories' },
   { name: 'Archive', href: '/archive' },
   // { name: 'Portfolio', href: '/portfolio' }, // Commented out as in original
-]
+];
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="relative">
@@ -73,5 +73,5 @@ export default function Navigation() {
         </div>
       )}
     </nav>
-  )
+  );
 }
