@@ -51,7 +51,7 @@ export default function About() {
             <div className="w-full">
               <iframe
                 style={{ borderRadius: '12px' }}
-                src="https://open.spotify.com/embed/track/0AeUTVVGVWgwPCpPGAm6sT?si=954cd69660e247c4"
+                src="https://open.spotify.com/embed/track/5ZqqudYxIktSnMlpJwK4Ye?si=47617b946d0c4c0c"
                 width="100%"
                 height="352"
                 allowFullScreen
