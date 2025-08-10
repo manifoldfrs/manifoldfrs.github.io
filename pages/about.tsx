@@ -12,7 +12,7 @@ export default function About() {
           {/* Header */}
           <section className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-              About
+              If Esoteric had a garden.
             </h1>
           </section>
 
@@ -20,29 +20,30 @@ export default function About() {
           <section className="prose prose-nord max-w-none">
             <div className="space-y-6 text-text-primary leading-relaxed">
               <p>
-                <em>If Esoteric had a garden.</em>
+                You&apos;ll find reflections on everything from programming to
+                diet and fitness. From religious contemplation, to practical
+                life philosophy, and poetry. The most interesting insights often
+                emerge from the cross-pollination of different ideas.
               </p>
 
-              <p>
-                I&apos;m Faris, an autodidact exploring the intersections of
-                technology, philosophy, and the human condition. This blog
-                serves as my digital commonplace book, where I cultivate ideas
-                across diverse domains.
-              </p>
-
-              <p>
-                You&apos;ll find reflections on everything from software
-                development and machine learning to diet and fitness, from
-                religious contemplation, to practical life philosophy, and
-                poetry. The garden metaphor isn&apos;t just aesthetic—it
-                reflects my belief that the most interesting insights often
-                emerge from the cross-pollination of seemingly unrelated fields.
-              </p>
-
-              <p>
-                Currently wandering the world as a digital nomad, I&apos;m
-                always open to thoughtful conversation and collaboration.
-              </p>
+              <h2>Principles</h2>
+              <ul>
+                <li>Clarity beats cleverness.</li>
+                <li>Explore, then operationalize.</li>
+                <li>
+                  Empathy with boundaries guides engineering. If it doesn&apos;t
+                  help someone, who cares? But don&apos;t lose your self-respect
+                  along the way.
+                </li>
+                <li>
+                  Discipline over drama. Quiet, consistent throughput beats
+                  spikes.
+                </li>
+                <li>
+                  Faith without naiveté. Let go of what you can&apos;t force;
+                  plan well for what you can.
+                </li>
+              </ul>
             </div>
           </section>
 
@@ -51,7 +52,7 @@ export default function About() {
             <div className="w-full">
               <iframe
                 style={{ borderRadius: '12px' }}
-                src="https://open.spotify.com/track/0Z06gAgsGv5hsLzvC06XMP?si=405def590426491f"
+                src="https://open.spotify.com/track/3eo7G3rcsFy4rEctyNR0rI?si=3bc76001d2314d23"
                 width="100%"
                 height="352"
                 allowFullScreen
