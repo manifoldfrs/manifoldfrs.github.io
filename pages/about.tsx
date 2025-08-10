@@ -41,7 +41,7 @@ export default function About() {
                 </li>
                 <li>
                   Faith without naiveté. Let go of what you can&apos;t force;
-                  plan well for what you can.
+                  plan for what you can.
                 </li>
               </ul>
             </div>
@@ -52,9 +52,10 @@ export default function About() {
             <div className="w-full">
               <iframe
                 style={{ borderRadius: '12px' }}
-                src="https://open.spotify.com/track/3eo7G3rcsFy4rEctyNR0rI?si=3bc76001d2314d23"
+                src="https://open.spotify.com/embed/track/362bgJ9BU3oEfkMaSqx1Nt?utm_source=generator"
                 width="100%"
                 height="352"
+                frameBorder="0"
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
