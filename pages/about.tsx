@@ -29,21 +29,13 @@ export default function About() {
               <h2>Principles</h2>
               <ul>
                 <li>Clarity beats cleverness.</li>
+                <li>
+                  Empathy with boundaries—dignity for others, self-respect for
+                  yourself.
+                </li>
                 <li>Explore, then operationalize.</li>
-                <li>
-                  Empathy with boundaries guides engineering. If it doesn&apos;t
-                  help someone, who cares? Don&apos;t lose your self-respect
-                  along the way though.
-                </li>
                 <li>Agency over drift.</li>
-                <li>
-                  Discipline over drama. Quiet, consistent throughput beats
-                  spikes.
-                </li>
-                <li>
-                  Faith without naïveté. Hold outcomes lightly; act with intent.
-                  Plan for what you can control, let go of what you can&apos;t.
-                </li>
+                <li>Love the craft—make it quietly beautiful.</li>
               </ul>
             </div>
           </section>
