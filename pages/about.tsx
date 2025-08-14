@@ -1,12 +1,9 @@
 import Layout from '@/components/Layout';
+import Image from 'next/image';
 
 export default function About() {
   return (
-    <Layout
-      title="About"
-      description="Learn more about Faris Habib"
-      url="/about"
-    >
+    <Layout title="About" url="/about">
       <div className="max-w-3xl mx-auto">
         <div className="space-y-8">
           {/* Header */}
@@ -14,6 +11,20 @@ export default function About() {
             <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
               If Esoteric had a garden.
             </h1>
+          </section>
+
+          {/* Vintage Image */}
+          <section className="flex justify-center">
+            <div className="relative w-full max-w-md">
+              <Image
+                src="/images/men_wanted_vintage.jpg"
+                alt="Vintage newspaper clipping reading 'MEN WANTED for hazardous journey, small wages, bitter cold, long months of complete darkness, constant danger, safe return doubtful, honor and recognition in case of success'"
+                width={400}
+                height={300}
+                className="rounded-lg shadow-lg"
+                priority
+              />
+            </div>
           </section>
 
           {/* Content */}
