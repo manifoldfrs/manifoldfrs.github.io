@@ -14,17 +14,14 @@ export default function About() {
           </section>
 
           {/* Vintage Image */}
-          <section className="flex justify-center">
-            <div className="relative w-full max-w-md">
-              <Image
-                src="/images/men_wanted_vintage.jpg"
-                alt="Vintage newspaper clipping reading 'MEN WANTED for hazardous journey, small wages, bitter cold, long months of complete darkness, constant danger, safe return doubtful, honor and recognition in case of success'"
-                width={400}
-                height={300}
-                className="rounded-lg shadow-lg"
-                priority
-              />
-            </div>
+          <section className="w-full flex justify-center py-4">
+            <Image
+              src="/images/men_wanted_vintage.jpg"
+              alt="Vintage newspaper clipping reading 'MEN WANTED for hazardous journey, small wages, bitter cold, long months of complete darkness, constant danger, safe return doubtful, honor and recognition in case of success'"
+              width={400}
+              height={300}
+              className="rounded-lg shadow-lg"
+            />
           </section>
 
           {/* Content */}
