@@ -53,7 +53,7 @@ export default function About() {
             <div className="w-full">
               <iframe
                 style={{ borderRadius: '12px' }}
-                src="https://open.spotify.com/embed/track/362bgJ9BU3oEfkMaSqx1Nt?utm_source=generator"
+                src="https://open.spotify.com/embed/track/2KmoTSrMgQDI8UIffLTmvj?si=af642c93dbcd442d"
                 width="100%"
                 height="352"
                 frameBorder="0"
