@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { PostMeta } from '@/lib/posts'
-import { capitalizeFirst, formatDate } from '@/lib/utils-client'
+import { formatDate } from '@/lib/utils-client'
 
 interface PostCardProps {
   post: PostMeta
@@ -13,21 +13,6 @@ export default function PostCard({ post }: PostCardProps) {
   return (
     <article className="post-card">
       <div className="space-y-3">
-        {/* Categories */}
-        {post.categories && post.categories.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {post.categories.map((category) => (
-              <Link
-                key={category}
-                href={`/categories/${category.toLowerCase()}`}
-                className="inline-block bg-nord-3 text-text-primary px-2 py-1 rounded text-xs hover:bg-primary hover:text-background-dark transition-colors"
-              >
-                {capitalizeFirst(category)}
-              </Link>
-            ))}
-          </div>
-        )}
-
         {/* Title */}
         <h2 className="text-xl font-semibold">
           <Link
