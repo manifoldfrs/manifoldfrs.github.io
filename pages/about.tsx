@@ -38,11 +38,10 @@ export default function About() {
               <ul>
                 <li>Clarity beats cleverness.</li>
                 <li>
-                  Empathy with boundaries. Have dignity for others, and respect
-                  for yourself.
+                  Have empathy with boundaries.
                 </li>
-                <li>Explore, then manufacture.</li>
-                <li>Agency over passivity.</li>
+                <li>Stay open and curious. When you know what you want go after it with moxie.</li>
+                <li>Think for yourself.</li>
                 <li>Love your craft.</li>
               </ul>
             </div>
