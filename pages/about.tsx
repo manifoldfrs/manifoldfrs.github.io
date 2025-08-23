@@ -12,18 +12,6 @@ export default function About() {
               If Esoteric had a garden.
             </h1>
           </section>
-
-          {/* Vintage Image */}
-          <section className="w-full flex justify-center py-4">
-            <Image
-              src="/images/men_wanted_vintage.jpg"
-              alt="Vintage newspaper clipping reading 'MEN WANTED for hazardous journey, small wages, bitter cold, long months of complete darkness, constant danger, safe return doubtful, honor and recognition in case of success'"
-              width={400}
-              height={300}
-              className="rounded-lg shadow-lg"
-            />
-          </section>
-
           {/* Content */}
           <section className="prose prose-nord max-w-none">
             <div className="space-y-6 text-text-primary leading-relaxed">
