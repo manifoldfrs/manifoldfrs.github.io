@@ -36,13 +36,13 @@ export default function About() {
 
               <h2>Principles</h2>
               <ul>
-                <li>Clarity beats cleverness.</li>
+                <li>Clarity beats cleverness</li>
                 <li>
-                  Have empathy with boundaries.
+                  Dignity for others and boundaries for yourself
                 </li>
-                <li>Stay open and curious. When you know what you want go after it with moxie.</li>
-                <li>Think for yourself.</li>
-                <li>Love your craft.</li>
+                <li>Moxie is more important than passion</li>
+                <li>Think for yourself</li>
+                <li>Love your craft</li>
               </ul>
             </div>
           </section>
