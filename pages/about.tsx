@@ -29,9 +29,9 @@ export default function About() {
             <div className="space-y-6 text-text-primary leading-relaxed">
               <p>
                 You&apos;ll find reflections on everything from programming to
-                diet and fitness. From religious contemplation, to practical
+                health and fitness. From religious contemplation, to practical
                 life philosophy, and poetry. The most interesting insights often
-                emerge from the cross-pollination of different ideas.
+                emerge from the cross-pollination of ideas.
               </p>
 
               <h2>Principles</h2>
