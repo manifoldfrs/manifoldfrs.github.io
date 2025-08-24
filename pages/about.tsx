@@ -9,7 +9,7 @@ export default function About() {
           {/* Header */}
           <section className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-              If Esoteric had a garden.
+              If Esoteric had a garden ⛲️
             </h1>
           </section>
           {/* Content */}
@@ -22,7 +22,7 @@ export default function About() {
                 emerge from the cross-pollination of ideas.
               </p>
 
-              <h2>Principles</h2>
+              <h2>Values</h2>
               <ul>
                 <li>Clarity beats cleverness</li>
                 <li>
