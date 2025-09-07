@@ -40,10 +40,9 @@ export default function About() {
             <div className="w-full">
               <iframe
                 style={{ borderRadius: '12px' }}
-                src="https://open.spotify.com/embed/track/2KmoTSrMgQDI8UIffLTmvj?si=af642c93dbcd442d"
+                src="https://open.spotify.com/embed/track/6Y64Hvb6IrD9QgM2mTjVxi?si=911924c0959b495b"
                 width="100%"
                 height="352"
-                frameBorder="0"
                 allowFullScreen
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"
