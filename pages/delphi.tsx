@@ -27,7 +27,7 @@ export default function Delphi() {
           __html: `
           window.delphi = {...(window.delphi ?? {}) };
           window.delphi.page = {
-            config: "18963e6d-89ff-42cc-868f-119f05893fb9",
+            config: "336efede-0173-43f7-8fb9-22cce9518718",
             overrides: {
               landingPage: "OVERVIEW",
             },
