@@ -27,7 +27,7 @@ export default function Delphi() {
           __html: `
           window.delphi = {...(window.delphi ?? {}) };
           window.delphi.page = {
-            config: "2d7d62d0-9cd9-4c2d-ba8a-4b009dc124fc",
+            config: "18963e6d-89ff-42cc-868f-119f05893fb9",
             overrides: {
               landingPage: "OVERVIEW",
             },
@@ -42,7 +42,7 @@ export default function Delphi() {
 
       <Script
         id="delphi-page-bootstrap"
-        src="https://embed.delphi.ai/loader.js"
+        src="https://embed.delphi.build/loader.js"
       />
     </Layout>
   );
