@@ -25,9 +25,7 @@ export default function About() {
               <h2>Values</h2>
               <ul>
                 <li>Clarity beats cleverness</li>
-                <li>
-                  Dignity for others and boundaries for yourself
-                </li>
+                <li>Dignity for others and boundaries for yourself</li>
                 <li>Moxie is more important than passion</li>
                 <li>Think for yourself</li>
                 <li>Love your craft</li>
@@ -40,7 +38,7 @@ export default function About() {
             <div className="w-full">
               <iframe
                 style={{ borderRadius: '12px' }}
-                src="https://open.spotify.com/embed/track/6Y64Hvb6IrD9QgM2mTjVxi?si=911924c0959b495b"
+                src="https://open.spotify.com/embed/track/4mXdThZ9JooNvF4vztdLtN?si=6be48074cef24f1a"
                 width="100%"
                 height="352"
                 allowFullScreen
