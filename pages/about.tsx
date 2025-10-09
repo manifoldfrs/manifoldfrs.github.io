@@ -24,11 +24,11 @@ export default function About() {
 
               <h2>Values</h2>
               <ul>
-                <li>Clarity beats cleverness</li>
-                <li>Dignity for others and boundaries for yourself</li>
-                <li>Moxie is more important than passion</li>
-                <li>Think for yourself</li>
-                <li>Love your craft</li>
+                <li>Understanding</li>
+                <li>Respect</li>
+                <li>Growth</li>
+                <li>Agency</li>
+                <li>Passion</li>
               </ul>
             </div>
           </section>
