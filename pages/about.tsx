@@ -24,9 +24,9 @@ export default function About() {
 
               <h2>Values</h2>
               <ul>
-                <li>Understanding</li>
-                <li>Respect</li>
-                <li>Growth</li>
+                <li>Curiosity</li>
+                <li>**Respect & Justice**</li>
+                <li>**Growth/Progress**</li>
                 <li>Agency</li>
                 <li>Passion</li>
               </ul>
