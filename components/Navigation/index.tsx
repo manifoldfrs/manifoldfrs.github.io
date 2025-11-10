@@ -6,7 +6,6 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Let Us Not Talk Falsely Now', href: '/delphi' },
   { name: 'Categories', href: '/categories' },
   { name: 'Archive', href: '/archive' },
   // { name: 'Portfolio', href: '/portfolio' }, // Commented out as in original
