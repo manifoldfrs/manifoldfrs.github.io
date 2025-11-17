@@ -26,10 +26,10 @@ export default function About() {
               <ul>
                 <li>Curiosity</li>
                 <li>
-                  <strong>Respect</strong>
+                  Respect
                 </li>
                 <li>
-                  <strong>Progress</strong>
+                  Progress
                 </li>
                 <li>Agency</li>
                 <li>Conviction</li>
