@@ -26,13 +26,13 @@ export default function About() {
               <ul>
                 <li>Curiosity</li>
                 <li>
-                  <strong>Respect/Justice</strong>
+                  <strong>Respect</strong>
                 </li>
                 <li>
-                  <strong>Growth/Progress</strong>
+                  <strong>Progress</strong>
                 </li>
                 <li>Agency</li>
-                <li>Passion</li>
+                <li>Conviction</li>
               </ul>
             </div>
           </section>
