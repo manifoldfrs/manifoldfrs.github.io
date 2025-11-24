@@ -9,7 +9,7 @@ export default function About() {
           {/* Header */}
           <section className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-              If Esoteric had a garden ⛲️
+              Velvet Steel
             </h1>
           </section>
           {/* Content */}
